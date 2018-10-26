@@ -1,0 +1,56 @@
+@charset 'utf-8';
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.box1{ /*클래스라서 . 찍어줌*/
+    width: 100%; /* 가로의 길이를 브라우저의 크기에 맞추기 위해 : 부모 가로의 크기에 맞추기 위해 */
+		/* height: 500px; */
+		/* ㄴ여기 height를 주석처리 한 이유는 부모가 500px이면 밑에 테두리 때문에 left right 안에 컨텐츠 높이는 498px이 된다.
+		따라서 안의 박스를 500px로 하면 부모박스의 크기에 1px 벗어나기 때문에
+
+    /*border-style: solid;
+    border-width: 1px;
+    border-color: black; 이렇게 쓰나 밑에처럼 쓰나 똑같 */
+		border: solid 1px black;
+	
+
+}
+
+.left,
+.right{
+	display: inline-block; /* 가로 한줄에 div 태그를 여러개 놓기 위해서 */
+	width: 50%;
+	height: 300px;
+	border: solid 1px red;
+	/* float: left; */
+}
+
+
+.right{
+	/* 위에서 float:left를 하면 왼쪽부터 차례대로 채우기 때문에
+	여기서 float:right한 결과와 같아서 주석 처리함. 다만 부모의 높이가 달라지는 차이가 있다
+	-> 앞에 한 예제는 왼쪽은 고정이고 오른쪽만 float를 주었기 때문에 부모의 높이가 왼쪽 고정된 박스를 기준으로 잡지만,
+		 지금 수정한 예제는 둘다 float로 했기 때문에 부모 박스는 컨텐츠가 없는 걸로 인식해서 높이가 0이다(테두리 제외한 높이) */
+	float: right;
+}
+.box2{
+	border: 1px solid black;
+	position: relative;
+}
+.left2, .right2, .mid2{
+	display: inline-block;
+	width: calc(100% / 3);
+	border : 1px solid red;
+	height: 102px;
+	position: absolute; /* 지정을 안해주면 자동으로 0이된다 기본값임. 그래서 left2 지정안했는데0이라 자동으로 왼쪽에붙어짐 */
+}
+.mid2{
+	left: calc(100% / 3);
+}
+.right2{
+	right: 0;
+}
+
