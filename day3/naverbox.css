@@ -1,0 +1,95 @@
+@charset 'utf-8';
+
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+
+}
+
+/* div{
+    border: solid black 1px;
+} */
+.container{
+    min-width: 1100px;
+}
+
+.nav-top{
+    /*height: 170px;*/
+}
+.nav-bottom{
+	border: 1px solid black;
+	border-right: none;
+	border-left: none;
+	/*
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	*/
+    /*height: 47px;*/
+}
+
+.nav-bottom-inner{
+    margin: 0 auto;
+    height:47px;
+    width: 1080px;
+    border-color: blue;  
+}
+.nav-top-inner{
+    margin: 0 auto;
+    height: 170px;
+    width: 1080px;
+    border-color: red;
+}
+.bottom-inner{
+    width: 1100px;
+    margin: 0 auto;
+    padding: 8px 10px 0; /* 순서 : 상 우 하 좌*/
+    /* padding: 8px 10px 0 10px; */
+}
+.bottom-wrap{
+    font-size: 0;
+
+
+}
+
+/* bottom-left클래스와 bottom-right클래스에 같이 적용될 css*/
+
+.bottom-left,
+.bottom-right{
+    display: inline-block;
+
+}
+.bottom-left{
+    width: 740px;
+}
+.bottom-right{
+    width: 332px;
+    float: right;
+
+}
+.bottom-left>div,
+.bottom-right>div{
+	margin-bottom: 8px;
+	border: solid 1px black;
+}
+.box1{
+	height: 120px;
+}
+.box2{
+	height: 46px;
+}
+.box3{
+	height: 246px;
+}
+.box4{
+	height: 120px;
+}
+.box5{
+	height: 142px;
+}
+.box6{
+	height: 152px;
+}
