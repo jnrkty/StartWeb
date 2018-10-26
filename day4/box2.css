@@ -1,0 +1,37 @@
+@charset 'utf-8';
+
+*{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+
+}
+
+.box{
+	height: 1000px;
+  background-color: aliceblue;
+}
+
+.top{
+	top: 0;
+	left: 50px; /* 왼쪽에 50px짤림 */
+	right: 0; /* right말고 witdh 100으로 넣어도 됨 */
+	height: 70px;
+	
+	background-color: aquamarine;
+	position: fixed;
+}
+
+
+/* 
+.nav{
+	background-color: aquamarine;
+	height: 70px;
+}
+
+.content{
+	background-color: aliceblue;
+	height: 1000px;
+	position: fixed;
+} ㄴ 강사님이 한거. */
