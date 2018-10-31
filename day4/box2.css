@@ -16,9 +16,8 @@
 .top{
 	top: 0;
 	left: 50px; /* 왼쪽에 50px짤림 */
-	right: 0; /* right말고 witdh 100으로 넣어도 됨 */
+	right: 0; /* right 0말고 width 100으로 넣어도 됨 */
 	height: 70px;
-	
 	background-color: aquamarine;
 	position: fixed;
 }

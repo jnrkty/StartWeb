@@ -1,0 +1,520 @@
+@charset 'utf-8';
+
+*{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
+
+}
+
+/* div{
+  border: solid black 1px;
+} */
+.container{
+  min-width: 1100px;
+    
+}
+
+.nav-top{
+  /*height: 170px;*/
+}
+.bottom{
+  background-color: aliceblue;
+}
+.nav-bottom{
+	border-top: 1px solid rgb(241, 243, 246);
+	border-bottom: 1px solid rgb(208, 216, 228);
+    
+	/*
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	*/
+  /*height: 47px;*/
+}
+
+.nav-bottom-inner{
+  position: relative;
+  margin: 0 auto;
+  height:47px;
+  width: 1080px;
+  border-color: blue;  
+}
+.nav-inner{
+	height: 32px;
+	font-size: 0;
+	position: relative;
+}
+.inline-block{
+  display: inline-block;
+}
+.item1{
+  width: 303px;
+  height: 32px;
+  padding: 16px 0 0 4px;
+  font-size: 0px; /* 상자들(item1-1 ~ 1-7) 사이에 자동으로 스페이스만큼의 공백이 생기니까 0으로 해서 딱 붙여준다 */
+}
+/* item1-1부터 itme1-7까지의 display속성을 inline-block으로 바꾸고 높이를 16px로 설정한다*/
+.item1>a>div,
+.item2>a>div{
+  display: inline-block;
+  height: 16px;
+  background-image: url(https://s.pstatic.net/static/www/img/2018/sp_nav_v181019.png);
+}
+.item1-1{
+  width: 25px;
+  background-position: -244px -233px;
+
+}
+.item1-2{
+  width: 27px;
+  background-position: -279px -130px;
+  margin-left: 14px;
+}
+.item1-3{
+  width: 40px;
+  background-position: -150px -182px;
+  margin-left: 14px;
+}
+.item1-4{
+  width: 40px;
+  background-position: -102px -156px;
+  margin-left: 14px;
+}
+.item1-5{
+  width: 26px;
+  background-position: -128px -104px;
+  margin-left: 14px;
+}
+.item1-6{
+  width: 25px;
+  background-position: -107px -285px;
+  margin-left: 14px;
+}
+.item1-7{
+  width: 32px;
+  background-position: -125px -130px;
+  margin-left: 14px;
+  margin-top: -1px;
+}
+.item2{
+  width: 366px;
+  height: 32px;
+	padding: 16px 0 0 14px;
+	font-size: 0;
+}
+.item2-1{
+	width: 26px;
+	background-position: 0 -259px;
+	margin-left: 0px;
+}
+.item2-2{
+	width: 28px;
+	background-position: -279px -26px;
+	margin-left: 14px;
+}
+.item2-3{
+	width: 26px;
+	background-position: -108px -259px;
+	margin-left: 14px;
+}
+.item2-4{
+	width: 40px;
+	background-position: -152px -156px;
+	margin-left: 14px;
+}
+.item2-5{
+	width: 27px;
+	background-position: -279px -208px;
+	margin-left: 14px;
+}
+.item2-6{
+	width: 27px;
+	background-position: -279px -52px;
+	margin-left: 14px;
+}
+.item2-7{
+	width: 26px;
+	background-position: -144px -259px;
+	margin-left: 14px;
+}
+.item2-8{
+	width: 13px;
+	background-position: -140px -78px;
+	margin-left: 14px;
+}
+.item2-9{
+	width: 27px;
+	background-position: -279px -78px;
+	margin-left: 14px;
+}
+.item3{
+	width: 1px;
+	height: 14px;
+	background-color: #ebeef3;
+	margin: 18px 16px 0;
+}
+.item4{
+	width: 55px;
+	height: 16px;
+	background-position: 0 -104px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_nav_v181019.png);
+}
+.item5{
+	width: 198px;
+	height: 20px;
+	position: absolute;
+	right: 0;
+	top: calc((100% + 15px) / 2); /* 실제 네이버는 꽉차게 100%인데 우리는 밑에 15px공백이 있다 네이버 따라하려면 +15px해줘야함 */
+	margin-top: -10px;
+	line-height: 20px;
+}
+.real-num{
+	color: #00ab33;
+	font-size: 16px;
+	font-family: Arial, Sans-serif;
+	line-height: 20px;
+}
+.real-search{
+	font-size: 14px;
+}
+.item6{
+	width: 11px;
+	height: 6px;
+	position: absolute;
+	right: 0;
+	top: calc((100% + 15px) / 2);
+	margin-top: -3px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_main_v181019.png);
+	background-position: -187px -73px;
+}
+
+.nav-top-inner{
+    margin: 0 auto;
+    height: 170px;
+    width: 1080px;
+    border-color: red;
+    position: relative;
+}
+.nav-links{
+    position: absolute;
+    right:-5px;
+    top: 11px;
+}
+.nav-links>a{
+    text-decoration: none;
+}
+.favorite{
+    line-height: 22px;
+    font-size: 11px;
+    color: #888;
+    float: left;
+}
+.favorite:hover{
+    text-decoration: underline;
+}
+.jrnaver,
+.happy{
+    padding: 5px;
+    float: left;
+}
+.jrnaver-inner{
+    background-image: url(https://s.pstatic.net/static/www/img/2018/sp_main_v181019.png);
+    background-position: 0 -120px;
+    height: 11px;
+    width: 58px; /*부모 태그의 가로의 길이가 미지정이기 때문에*/
+}
+.jrnaver-inner:hover{
+    background-position: -68px -120px;
+}
+.happy-inner{
+    background-image: url(https://s.pstatic.net/static/www/img/2018/sp_main_v181019.png);
+    background-position: -143px -52px;
+    height: 11px;
+    width: 34px;
+}
+.happy-inner:hover{
+    background-position: -144px -73px;
+}
+
+.bottom-inner{
+    width: 1100px;
+    margin: 0 auto;
+    padding: 8px 10px 0; /* 순서 : 상 우 하 좌*/
+    /* padding: 8px 10px 0 10px; */
+}
+.bottom-wrap{
+    font-size: 0;
+}
+/* bottom-left클래스와 bottom-right클래스에 같이 적용될 css*/
+
+.bottom-left,
+.bottom-right{
+    display: inline-block;
+
+}
+.bottom-left{
+    width: 740px;
+}
+.bottom-right{
+    width: 332px;
+    float: right;
+
+}
+.bottom-left>div,
+.bottom-right>div{
+	margin-bottom: 8px;
+	border: solid 1px rgb(222, 225, 235);
+}
+.bottom-left>div.box1{
+    height: 120px;
+    border-color: rgb(248, 181, 79);
+}
+.box2{
+	height: 46px;
+}
+.box3{
+	height: 246px;
+}
+.box4{
+    height: 120px;
+    background-color: white;
+    position: relative;
+}
+.box4-inner{
+    height: 93px;
+    padding: 15px 25px;
+}
+.box4-inner>p{
+    color: #888;
+    font-size: 12px;
+    /* line-height : 글자를 입력하면 글자 크기(font-size)와 고정된 길이를 포함한 높이가 지정되는데
+    이 높이가 line-height이다. 보통 line-height에서는 글자 크기를 증가시켜도 높이가 늘어나는 것을 막고자 할 때 사용한다
+    그래서 이렇게 입력하면 글자 크기를 포함한 높이가 14px가 되게 한다
+
+    예 : 두줄로 입력하면 line-height가 자동으로 같이 늘어나서 두줄사이에 살짝 공백이 생기는데,
+    아예 딱 line-heightt를 정해두면 글자는 커졌지만 높이는 안늘어나서 글자가 겹칠 수 있다 */
+    line-height: 14px; 
+}
+.login-btn{
+    display: block;
+    height: 37px;
+    margin-top: 12px;
+    background-image: url("https://s.pstatic.net/static/www/img/2018/sp_login_v180727.png");
+    background-position: 0 -47px;
+}
+.login-links{
+    height: 38px;
+    width: 280px;
+    position: absolute;
+    left: 25px;
+    bottom: 0;
+    font-size: 0;
+}
+.login-links>a{
+    line-height: 38px;
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+
+}
+.login-links>a:hover{
+    text-decoration: underline;
+}
+.box5{
+	height: 142px;
+}
+.box5-top,
+.box5-bottom{
+	background-color: white;
+}
+.box5-top{
+	height: 34px;
+	border-bottom: 1px solid rgb(235, 248, 243);
+	padding-left: 15px;
+}
+.box5-bottom{
+	height: 106px;
+}
+.box5-item1{
+	display: inline-block;
+	width: 208px;
+	height: 33px;
+	padding: 9px 0px 7px 0px;
+}
+.day{
+	font-weight: bold;
+	line-height: 17px;
+	font-size: 14px;
+	text-decoration: none;
+	color: black;
+}
+.fa-ellipsis-v{
+	color: rgb(227, 231, 238);
+}
+.location{
+	color: #888;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 400;
+	text-decoration: none;
+}
+.location:hover{
+	text-decoration: underline;
+}
+/* .header-info{
+	display: inline-block;
+  overflow: hidden;
+  padding: 9px 0 7px;
+  max-width: 208px;
+  width: 208px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.header-info>a{
+	position: relative;
+  top: 1px;
+  color: #000;
+  text-decoration: none;
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+}
+.header-paging{
+	position: absolute;
+  top: 10px;
+  right: 0;
+  margin-right: 78px;
+  color: #888;
+  font-size: 12px;
+  font-family: Tahoma,sans-serif;
+  line-height: 14px;
+}
+.hp-curr{
+	color: #000;
+  font-weight: 700;
+}
+.hp-total{
+	color: #888;
+	font-size: 12px;
+	font-family: Tahoma,sans-serif;
+	line-height: 14px;
+}
+.header-btn{
+	position: absolute;
+  top: 0;
+	right: 0;
+	display: block;
+}
+.header-btn-prev,
+.header-btn-next{
+	display: block;
+  float: left;
+  padding: 11px 0;
+  width: 33px;
+  height: 11px;
+  border-left: 1px solid #ebeef3;
+  text-align: center;
+}
+.icon-btn-prev{
+	width: 6px;
+  height: 11px;
+	background-position: -433px -303px;
+	background-image: url(https://s.pstatic.net/static/www/img/2017/sp_timesquare_v170913a.png);
+	display: inline-block;
+	text-align: center;
+}
+.icon-btn-next{
+	width: 6px;
+  height: 11px;
+	background-position: -433px -324px;
+	background-image: url(https://s.pstatic.net/static/www/img/2017/sp_timesquare_v170913a.png);
+	display: inline-block;
+} */
+.box6{
+	height: 152px;
+}
+.float-right{
+    float: right;
+}
+
+/*로고 관련*/
+.logo-img{
+	display: block; /* 로고이미지 크기를 조절하기 위해 */
+	width: 198px;
+	height: 48px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_search.svg);
+	background-position: -4px -4px;
+}
+.logo-box{
+	position: absolute;
+	left: -4px;
+	top: 50%;
+	margin-top: -25px;
+}
+.input-box{
+	display: inline-block;
+	width: 474px;
+	height: 49px;
+	border: 2px solid #03cf5d;
+}
+.search-box{
+	position: absolute;
+	left: 219px;
+	top: 50%;
+	margin-top: -20px;
+}
+.search-btn{
+	width: 49px;
+	height: 49px;
+	background-color: #03cf5d;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border: 0;
+}
+.btn-img{
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	left: 14px;
+	top: 14px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_search.svg);
+	background-position: -4px -60px;
+}
+.auto-search{
+	width: 27px;
+	height: 42px;
+	position: absolute;
+	right: 49px;
+	top: 50%;
+	margin-top: -23px;
+	padding: 19px 12px 19px 6px;
+	cursor: pointer;
+}
+.auto-down{
+	width: 9px;
+	height: 4px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_search.svg);
+	background-position: -87px -60px;
+}
+.keyboard{
+	width: 31px;
+	height: 42px;
+	position: absolute;
+	right: 76px;
+	top: 50%;
+	margin-top: -23px;
+	padding: 15px 6px;
+	cursor: pointer;
+}
+.keyboard-img{
+	width: 19px;
+	height: 11px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_search.svg);
+	background-position: -33px -60px;
+}
