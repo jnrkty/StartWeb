@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+    <!--
+      일반적인 변수(string, number)데이터를 표시하고 싶을 때는 다음 태그를 쓴다
+      <%= %> 태그를 쓴다
+      자바스크립트 코드를 작성하고 싶은 경우에는
+      <% %> 태그를 쓴다
+
+      ejs 파일 내에서 자바스크립트 코드를 주석하려면 <%# %> 태그를 쓴다
+    -->
+    <table border="1">
+      <tr>
+        <td>글번호</td>
+        <td>제목</td>
+        <td>이름</td>
+        <td>조회수</td>
+        <td>작성일</td>
+        <td>추천수</td>
+        <td>비밀글</td>
+        </tr>
+      <%
+      for(i=0; i<send_data.length; i++){
+      %>
+      <tr>
+        <td><%= send_data[i].Board_seq %></td>
+        <td><%= send_data[i].Title %></td>
+        <td><%= send_data[i].Writer_seq %></td>
+        <td><%= send_data[i].View_count %></td>
+        <td><%= send_data[i].Updated_at %></td>
+        <td><%= send_data[i].Best_count %></td>
+        <td><%= send_data[i].Secret %></td>
+      </tr>
+      <%
+      }
+      %>
+    </table>
+    <%
+      for(i=0; i<send_data.length; i++){
+      %>
+      <p><%= send_data[i].wid %></p>
+      <p><%= send_data[i].title %></p>
+      <p><%= send_data[i].name %></p>
+      <p><%= send_data[i].view_count %></p>
+      <p><%= send_data[i].best_count %></p>
+      <p><%= send_data[i].cate %></p>
+      <br>
+      <%
+      }
+      %>
+    
+  </body>
+</html>

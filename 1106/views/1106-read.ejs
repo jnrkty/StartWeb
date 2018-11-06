@@ -1,0 +1,49 @@
+<html>
+  <head>
+		<title></title>
+	</head>
+	<body>
+		<table border="1">
+		<tr>
+			<td>글번호</td>
+			<td><%= send_data[0].Board_seq %></td>
+		</tr>
+		<tr>
+			<td>제목</td>
+			<td><%= send_data[0].Title %></td>
+		</tr>
+		<tr>
+			<td>이름</td>
+			<td><%= send_data[0].Writer_seq %></td>
+		</tr>
+		<tr>
+			<td>조회수</td>
+			<td><%= send_data[0].View_count %></td>
+		</tr>
+		<tr>
+			<td>추천수</td>
+			<td><%= send_data[0].Best_count %></td>
+		</tr>
+		<tr>
+			<td>카테고리</td>
+			<td><%= send_data[0].Contents %></td>
+		</tr>
+		<tr>
+		<tr>
+			<td>내용</td>
+			<td><%= send_data[0].Writer_seq %></td>
+		</tr>
+		<tr>
+			<td>수정일</td>
+			<td><%= send_data[0].Updated_at %></td>
+		</tr>
+		<tr>
+			<td>작성일</td>
+			<td><%= send_data[0].Created_at %></td>
+		</tr>
+		</table>
+		<button>추천하기</button>
+		<button>수정하기</button>
+		<button>삭제하기</button>
+	</body>
+</html>
