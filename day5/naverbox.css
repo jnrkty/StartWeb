@@ -18,6 +18,9 @@
   min-width: 1100px;
     
 }
+ul,ol{
+	list-style: none;
+}
 
 .nav-top{
   /*height: 170px;*/
@@ -288,16 +291,6 @@
 	margin-top: -7px;
 	list-style: none;
 }
-.box2-inner2::after{
-	clear: both;
-	content: "";
-	display: block;
-}
-.box2-inner::after{
-	display: block;
-	clear: both;
-	content: "";
-}
 .ul-item{
 	display: inline-block;
 	float: left;
@@ -395,6 +388,9 @@
 	letter-spacing: -1px;
 	font-weight: bold;
 }
+.box2-inner2::after,
+.box2-inner::arter,
+.api-list::after,
 .box3-menu::after,
 .box3-item3::after,
 .box3-item2::after{
@@ -455,32 +451,64 @@
 	height: 200px;
 	position: relative;
 }
-.list-wrap{
+/* .list-wrap{
 	position: relative;
 	width: 100%;
 	height: 200px;
-}
+} */
 .api-list{
 	position: relative;
 	width: 104%;
 	height: 199px;
+	overflow: hidden;
+	font-size: 0;
 }
-.api-item{
-	position: relative;
-	z-index: 0;
-	float: left;
-	padding: 21px 0 22px;
-	width: 122px;
+ul.api-list>li{
+	width: 123px;
 	height: 67px;
+	z-index: 0;
+	padding: 21px 0 22px;
 	border-right: 1px solid #f1f3f6;
-	list-style: none;
+	float: left;
+}
+ul.api-list>li>a>img{
+	height: 24px;
+	width: auto;
+}
+ul.api-list>li>a{
+	display: block;
+	text-align: center;
+}	
+.border-right{
+	width: 1px;
+	height: 199px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #fff;
+	z-index: 1;
+}
+.border-center1,
+.border-center2{
+	width: 738px;
+	height: 1px;
+	position: absolute;
+	background-color: #f1f3f6;
+	z-index: 1;
+	left: 0;
+}
+.border-center1{
+	top: 66px;
+}
+.border-center2{
+	bottom: 66px;
 }
 .api-link{
 	display: block;
 	height: 100%;
 	text-align: center;
 }
-.api-list-border-right{
+/* .api-list-border-right{
 position: absolute;
 	top: 0;
 	right: 0;
@@ -489,12 +517,12 @@ position: absolute;
 	width: 1px;
 	height: 199px;
 	background-color: #fff;
-}
-.api-list-border-horizontal1{
+} */
+/* .api-list-border-horizontal1{
 	top: 66px;
 	left: 0;
-}
-.api-list-border-horizontal2{
+} */
+/* .api-list-border-horizontal2{
 	position: absolute;
   bottom: 66px;
   left: 0;
@@ -506,7 +534,7 @@ position: absolute;
 	width: 100%;
 	height: 1px;
 	background-color: #f1f3f6;
-}
+} */
 .box4{
     height: 120px;
     background-color: white;
