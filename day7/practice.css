@@ -1,0 +1,43 @@
+@charset 'utf-8';
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.out-box{
+	height: 400px;
+	width: 100%;
+	border: 1px solid red;
+}
+.in-box{
+	/* 아웃박스와 인박스 사이에는 10px만큼 여백이 위 아래 좌 우에 들어가기 때문에 여백의 크기 *2를 빼야한다. 
+	*2를 하는 이유는 높이를 계산할때 위아래 여백을 빼야하고 너비를 계산할때 좌우의 여백을 빼야하기 때문이다 */
+	height: calc(400px - 2 * 10px); /* 위아래 10px빼는거라서 -20px로 해줘도됨 */
+	width: calc(100% - 2 * 10px);
+	border: 1px solid black;
+}
+
+/* padding을 이용 */
+.padding{
+	padding: 10px;
+}
+.padding>.in-box{
+	width: 100%;
+}
+
+/* margin을 이용 */
+.margin{
+	margin: 10px;
+}
+
+/* position을 이용 */
+.out-box.relative{
+	position: relative;
+}
+.in-box.absolute{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="practice.css">
+</head>
+<body>
+	<!--
+		padding을 이용한 박스안 박스 만들기
+		padding을 이용할 때에는 아웃박스에 padding을 주어 인박스의 위치를 수정한다
+	-->
+	<div class="out-box padding">
+		<div class="in-box"></div>
+	</div>
+
+	<!--
+	margin을 이용
+	인박스에 margin을 주어 인박스의 위치를 수정한다
+	-->
+	<div class="out-box">
+		<div class="in-box margin"></div>
+	</div>
+	<!--
+		position : absolute를 이용
+		absolute를 이용할 때에는 아웃박스에는 position을 relavite로, 인박스에는 position을 absolute로 변경하여 이용 
+	-->
+	<div class="out-box relative">
+			<div class="in-box absolute"></div>
+	</div>
+	
+</body>
+</html>

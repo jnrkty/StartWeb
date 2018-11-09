@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<!--
+		부트스트랩4에서 브라우저 크기의 종류
+			-col : ~575px
+			-col-sm : 576px~768px
+			-col-md : 768px~992px
+			-col-lg : 992px~1200px
+			-col-xl : 1200px~
+		container 클래스는 브라우저 크기마다 지정된 너비가 있어서 해당 너비를 제외한 부분을 margin으로 계산한다-->
+	<div class="container">
+		안녕하세요
+	</div>
+	<!--
+		너비의 길이를 현재 브라우저의 너비로 계산
+	-->
+	<div class="container-fluid">
+		안녕하세요
+	</div>
+	<div class="container-fluid">
+		<div>
+			<input type="text">
+		</diV>
+			<input type="text">
+		</div>
+		<div>
+		<div class="form-group">
+				<input type="text" class="form-control">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="comment">Comment:</label>
+		<textarea class="form-control" rows="5" id="comment"></textarea>
+	</div>
+	<div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+		<div class="form-group">
+			<input type="text" class="form-control">
+		</div>
+	</div>
+	
+</body>
+</html>
