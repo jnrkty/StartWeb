@@ -29,7 +29,7 @@
       %>
       <tr>
         <td><%= send_data[i].Board_seq %></td>
-        <td><%= send_data[i].Title %></td>
+        <td><a href="/read/<%= send_data[i].Board_seq %>"><%= send_data[i].Title %></a></td>
         <td><%= send_data[i].Writer_seq %></td>
         <td><%= send_data[i].View_count %></td>
         <td><%= send_data[i].Updated_at %></td>
@@ -39,7 +39,8 @@
       <%
       }
       %>
-    </table>
+		</table>
+		<input type="button" value="글쓰기" onclick="window.location.href='http://127.0.0.1:3000/1112-write'">
     <%
       for(i=0; i<send_data.length; i++){
       %>
@@ -53,6 +54,5 @@
       <%
       }
       %>
-    
-  </body>
+	</body>
 </html>

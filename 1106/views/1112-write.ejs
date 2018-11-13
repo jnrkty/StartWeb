@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="/stylesheets/style.css">
+		<script>
+			/**
+			 * 데이터를 서버에 전달하기 전에 사용자가 입력한 제목, 이름, 글 내용을 검사하는 자바스크립트 함수
+			 */
+			function onWriteSubmit() {
+				/**
+				 * document.getElementById() : html 문서에서 특정한 ID를 가진 요소를 찾아주는 함수,
+				 * 											html input태그가 리턴되며, 뒤에 .value;를 참조하면 input태그 안에 입력한 값을 읽어올 수 있다
+				 * 참고)document.getElementsByname()
+				 * 
+				 * # id랑 name 공통점 : html 문서 안에 있는 특정 요소를 식별(ex 주민번호, 이름)
+				 * 	차이점 : id -> 특정요소를 나타내는 고유한 문자열(id는 중복되지 않는다)
+				 * 					name -> 특정요소를 나타내지만 중복이 허용된다
+				 */
+
+				//id가 titleInput, nameInput, contentsInput인 요소의 값들을 읽어와 저장한다
+				var title = document.getElementById('titleInput').value;
+				var name = document.getElementById('nameInput').value;
+				var contents = document.getElementById('contentsInput').value;
+				
+				if(title.length > 50) {
+					alert("제목은 50글자 이상 입력할 수 없습니다");
+					return false;
+				}
+				if(title == ""){
+					alert("제목을 입력해야 합니다");
+					return false;
+				}
+				if(name.length > 20){
+					alert("이름은 20글자 이상 입력할 수 없습니다");
+					return false;
+				}
+				if(name == ""){
+					alert("이름을 입력해야 합니다");
+					return false;
+				}
+				if(contents.length > 1000){
+					alert("내용은 1000글자 이상 입력할 수 없습니다");
+				}
+				if(contents == ""){
+					alert("내용을 입력해야 합니다");
+					return false;
+				}
+			}
+				</script>
+	</head>
+	<body>
+		<h1>글쓰기</h1>
+		<!--
+			form 태그
+			html 문서에서 서버로 데이터를 전송할 때 쓰는 태그
+			method : 데이터를 전송하는 방식(post방식(데이터를 메시지에 넣음), get방식(데이터를 주소에 넣음))
+			action : 데이터를 받는 서버의 주소
+			onsubmit : form 태그 안에 있는 버튼을 눌렀을 때 서버에 전달하기 전에 실행되는 자바스크립트 함수
+								 (Validate 과정 : 사용자가 제대로된 값을 입력했는지 검사함))
+		-->
+		<form method="post" action="./1112-write" onsubmit="return onWriteSubmit()">
+			<table border="1" width="100%">
+				<tr>
+					<td>제목</td>
+					<td><input type="text" name="titleInput" id="titleInput" placeholder="제목을 입력해 주세요"></td>
+				</tr>
+				<tr>
+					<td>이름</td>
+					<td><input type="text" name="nameInput" id="nameInput" placeholder="이름을 입력해주세요"></td>
+				</tr>
+				<tr>
+					<td>카테고리</td>
+					<td>
+						<input type="radio" name="noti" id="noti_yes" value="1"><label for="noti_yes">공지글</label>
+						<input type="radio" name="noti" id="noti_no" value="0" checked="checked">일반글
+					</td>
+				</tr>
+				<tr>
+					<td>내용</td>
+					<td><input type="text" name="contentsInput" id="contentsInput"></td>
+				</tr>
+					<td><input type ="submit"></td>
+			</table>
+		</form>
+	</body>
+</html>

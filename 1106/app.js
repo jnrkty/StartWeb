@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var readRouter = require('./routes/1106-read.js'); //routes폴더에 1106-read.js파일을 읽어오는 코드
-
+var writeRouter = require('./routes/1112-write.js'); //routes폴더에 1112-write.js파일을 읽어오는 코드
 var app = express();
 
 // view engine setup
@@ -24,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter); //127.0.0.1:3000/나머지주소
 app.use('/1106-read', readRouter);
+app.use('/1112-write', writeRouter); //사용자가 127.0.0.1:3000/1112-write로 접속할때 1112-write.js를 실핸한다
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
