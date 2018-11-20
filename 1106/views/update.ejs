@@ -49,7 +49,7 @@
 				</script>
 	</head>
 	<body>
-		<h1>글쓰기</h1>
+		<h1>수정하기</h1>
 		<!--
 			form 태그
 			html 문서에서 서버로 데이터를 전송할 때 쓰는 태그
@@ -58,15 +58,15 @@
 			onsubmit : form 태그 안에 있는 버튼을 눌렀을 때 서버에 전달하기 전에 실행되는 자바스크립트 함수
 								 (Validate 과정 : 사용자가 제대로된 값을 입력했는지 검사함))
 		-->
-		<form method="post" action="./1112-write" onsubmit="return onWriteSubmit()">
+		<form method="post" action="/update" onsubmit="return onWriteSubmit()">
 			<table border="1" width="100%">
 				<tr>
 					<td>제목</td>
-					<td><input type="text" name="titleInput" id="titleInput" placeholder="제목을 입력해 주세요"></td>
+					<td><input type="text" name="titleInput" id="titleInput" value="<%= send_data[0].Title %>" placeholder="제목을 입력해 주세요"></td>
 				</tr>
 				<tr>
 					<td>이름</td>
-					<td><input type="text" name="nameInput" id="nameInput" placeholder="이름을 입력해주세요"></td>
+					<td><input type="text" name="nameInput" id="nameInput" value="<%= send_data[0].Writer_seq %>" placeholder="이름을 입력해주세요"></td>
 				</tr>
 				<tr>
 					<td>카테고리</td>
@@ -77,9 +77,9 @@
 				</tr>
 				<tr>
 					<td>내용</td>
-					<td><input type="text" name="contentsInput" id="contentsInput"></td>
+					<td><input type="text" name="contentsInput" id="contentsInput" value="<%= send_data[0].contents %>"></td>
 				</tr>
-					<td><input type ="submit" value="글쓰기"></td>
+					<td><input type ="submit" value="수정하기"></td>
 			</table>
 		</form>
 	</body>

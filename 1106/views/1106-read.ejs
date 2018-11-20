@@ -42,8 +42,8 @@
 			<td><%= send_data[0].Created_at %></td>
 		</tr>
 		</table>
-		<button>추천하기</button>
-		<button>수정하기</button>
-		<button>삭제하기</button>
+		<input type="button" value="추천하기">
+		<input type="button" value="수정하기" onclick="window.location.href='http://127.0.0.1:3000/update/<%= send_data[0].Board_seq %>'">
+		<input type="button" value="삭제하기" onclick="window.location.href='http://127.0.0.1:3000/del/<%= send_data[0].Board_seq %>'">
 	</body>
 </html>
