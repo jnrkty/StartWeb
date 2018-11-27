@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="pw">
+	<button onclick="click2()">클릭</button>
+	
+	<div id="pw-error"></div>
+	<div id="length">길이가 맞지 않습니다</div>
+	<div id="regex">정규표현식에 맞지 않습니다</div>
+	<script>
+		clearBox();
+		function clearBox(){
+			document.getElementById('length').style.display = 'none';
+			document.getElementById('regex').style.display = 'none';
+		}
+		function showBox(id){
+			document.getElementById(id).style.display = 'block';
+		}
+		//createElement(태그명)
+		//createTextNode(문자열)
+		//객체1.removeChild(객체2)
+		//document.querySelector('선택자')
+		//객체1.appendChild(객체2)
+	
+
+		
+
+		function creatErrorMessage(massage){
+			var span = document.createElement('span'); //span태그 생성
+			var spantext = document.createTextNode(massage); //텍스트 노드를 만들어서 해당 텍스트에 message를 입력 
+			span.appendChild(spantext); //span태그에 텍스트 노드를 붙인다
+			var error = document.getElementById('pw-error'); //id가 pw-error인 요소의 객체 정보를 가져오고
+			error.appendChild(span); //해당객체에 span태그를 붙인다
+			console.log(error);
+		}
+
+		function clearErrorMessage(){
+			var error = document.getElementById('pw-error'); //pw-error인 요소의 객체정보1을 가져온다
+			var span = document.querySelector('#pw-error>span'); //id가 pw-error인 요소안에있는 span의 객체정보2를 가져온 후
+			if(span != null)
+				error.removeChild(span); //객체정보1에서 객체정보2를 제거한다
+		}
+		
+		function click1(){
+			var text = document.getElementById('pw').value;
+			var regex = /^\w*([A-z]\d|\d[A-z])\w*$/;
+			clearErrorMessage();
+			if(8>text.length || text.length>20){
+				//alert('길이가 맞지 않습니다');
+				creatErrorMessage('길이가 맞지 않습니다');
+				return false;
+			}
+		
+			if(regex.test(text)){
+				alert('정규표현식에 맞습니다');
+				return true;
+			}
+			else{
+				//alert('정규표현식에 맞지 않습니다');
+				creatErrorMessage('정규표현식에 맞지 않습니다');
+				return false;
+			}
+		}
+
+		function click2(){
+			var text = document.getElementById('pw').value;
+			var regex = /^\w*([A-z]\d|\d[A-z])\w*$/;
+			clearBox();
+			if(8>text.length || text.length>20){
+				//alert('길이가 맞지 않습니다');
+				showBox('length');
+				return false;
+			}
+		
+			if(regex.test(text)){
+				alert('정규표현식에 맞습니다');
+				return true;
+			}
+			else{
+				//alert('정규표현식에 맞지 않습니다');
+				showBox('regex');
+				return false;
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -71,3 +71,4 @@ console.log("문자열 비교");
 console.log("a>b" + 'a'>'b');
 console.log("a>aa: " + ('a'>'aa'));
 console.log("a>A: "+ ('a'>'A'));
+// console.log("123>7: "+ ('123'>'7'));
