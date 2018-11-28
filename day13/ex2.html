@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+	<title>Document</title>
+
+</head>
+
+<body>
+	<button>클릭</button>
+	<input type="text" id="input1">
+	<p><b>hello</b></p>
+
+	<script>
+		/* $(document).ready메소드 안에 코드를 구현하면 해당 스크립트가 어디에 위치하든 동일하게 동작한다
+			하지만 $(document).ready 메소드 밖에 선언을 하면 스크립트 위치에 따라 동작하지 않을 수 있다
+			그래서 가급적이면 $(document).ready메소드 안에 기능을 구현하는 것이 좋다
+		*/
+
+
+		$(document).ready(function () {
+			function test() {
+			
+			$('p').animate({'color':'red','font-size':'40px'},"slow");
+			var text = $('p').text(); //얘는 hello만 가져오고
+			var html = $('p').html(); //얘는 p안에있는거 전부 <b>hello</b>까지 가져온다
+			console.log(text);
+			console.log(html);
+			// $('p').text('123');
+			$('p').html('<input type="text">'); //hello 대신 input창으로 바꾸기
+			}
+			$('button').click(test);
+
+			//focus : 활성화될때
+			$('#input1').focus(function () {
+				$(this).css('background-color', 'yellow');
+			});
+			//blur : 활성화 해제될때
+			$('#input1').blur(function () {
+				$(this).css('background-color', 'green');
+			});
+
+			//mouseenter : 마우스가 닿았을때
+			$('#input1').mouseenter(function(){
+				$(this).css('background-color','black');
+			})
+
+			//mouseleave : 마우스가 떠났을때
+			$('#input1').mouseleave(function(){
+				$(this).css('background-color','blue');
+			});
+			
+		});
+	</script>
+</body>
+
+</html>

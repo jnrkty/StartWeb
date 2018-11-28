@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>Document</title>
+	<style>
+		.redbox{
+			background-color: red;
+			color: white;
+			height: 100px;
+		}
+		.greenbox{
+			background-color: green;
+			color: violet;
+			height: 100px;
+		}
+		.display-none{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="redbox">123</div>
+	<div class="greenbox">456</div>
+	<div id="valid" class="display-none">유효성 검사</div>
+	<button class="btn1">클래스 제거</button>
+	<button class="btn2">클래스 추가</button>
+	<button class="btn3">유효성</button>
+	<script>
+		$(document).ready(function(){
+			$('.btn1').click(function(){
+				$('.redbox').removeClass('redbox');	
+			});
+			$('.btn2').click(function(){
+				$('div').addClass('redbox');	
+			});
+			$('.btn3').click(function(){
+				$('#valid').toggleClass('display-none'); //네이버토글처럼 추가시켰다가 제거하는거	
+
+				
+			/* 아래 예제를 이용할 때 처음에는 동작하지만 이후에는 동작하지 않음.
+				 처음에는 display-none클래스가 있어서 동작하지만,
+				 toggleClass에 의해 제거된 이후에는 display-none클래스를 가진 객체가 없어서 동작하지 않음
+			 	 $('.display-none').toggleClass('display-none'); */
+		
+			});
+		});
+		</script>
+</body>
+</html>

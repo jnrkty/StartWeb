@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="login.css">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="jquery.js"></script>
+	<title>Document</title>
+</head>
+<body>
+
+	<h1>회원가입</h1>
+	<form method="get" class="form">
+		<div class="box1">
+			<h3 class="h3">아이디</h3>
+			<input type="text" id="id" class="text" placeholder="아이디를 입력해주세요"><br>
+			<div id="boxid1">
+				아이디는 5자 이상 10자 이하이다
+			</div>
+			<div id="boxid2">
+				아이디의 시작은 영문자로 시작해야 한다
+			</div>
+			<h3 id="password" class="h3">비밀번호</h3>
+			<input type="password" id="pw" class="password" placeholder="비밀번호를 입력해주세요"><br>
+			<div id="boxid3">
+				비밀번호는 8자 이상 20자 이하이다
+			</div>
+			<div id="boxid4">
+				비밀번호는 영문자와 숫자가 한개 이상씩 포함되어야 한다
+			</div>
+			<h3 id="password2" class="h3">비밀번호확인</h3>
+			<input type="password" id="repw" class="password2" placeholder="비밀번호를 다시 입력해주세요"><br>
+			<div id="boxid5">
+				비밀번호와 일치하지 않습니다
+			</div>			
+			<h3 class="h3">이름</h3>
+			<input type="text" class="name" placeholder="이름을 입력해주세요"><br>
+			<h3 id="gender" class="h3">성별</h3>
+			<input type="radio" name="gender" value="male" checked> 남성
+			<input type="radio" name="gender" value="female"> 여성 <br>
+			<h3 id="checkbox" class="h3">약관동의</h3>
+ 			<input type="checkbox"> 필수 동의1<br>
+			 <input type="checkbox"> 선택 동의1<br>
+			<button>회원가입</button>
+		
+		</div>
+	</form>
+<script>
+	
+	$(document).ready(function(){
+		//html태그에 있는 id="id"인 객체 안에 onchange="checkid()"를 지우고 난 후 추가하여 동작을 하도록 함
+		$('#id').change(checkid);
+		$('#pw').change(checkpw);
+		$('#repw').change(checkrepw);
+		$('form').submit(check);
+
+	function checkValidation(regex, text){
+		if(regex.test(text))
+		return true;
+		return false;
+	}
+
+	/*
+		아이디가 id인 박스를 안보이게 감추는 함수
+	*/
+	function clearBox(selector){
+		var element = $(selector);
+		if(element != null)
+			element.css('display','none');
+	}
+	/*
+		모든 에러 관련 메시지 박스를 감추는 함수
+	*/
+	function clear(){
+		clearBox('#boxid1');
+		clearBox('#boxid2');
+		clearBox('#boxid3');
+		clearBox('#boxid4');
+		clearBox('#boxid5');
+	}
+	function check(){
+		var isSubmit = true;
+		//아이디 유효성 검사가 실패하면
+		if(!checkid())
+			isSubmit = false;
+		if(!checkpw())
+			isSubmit = false;
+		if(!checkrepw())
+			isSubmit = false;
+		return isSubmit;
+	}
+
+	//아이디가 id인 박스를 보여주는 함수
+	function showBox(selector){
+	var element = $(selector);
+	if(element != null)
+		element.css('display','block');
+	}
+	function checkid(){
+		var id = $('#id').val();
+		var regex = /^[A-z]\w{4,9}$/;
+		clearBox('#boxid1');
+		clearBox('#boxid2');
+
+		if(id.length <5 || id.length > 10){
+			showBox('#boxid1');
+			return false;
+		}
+		if(!checkValidation(regex,id)){
+			//메세지를 출력
+			showBox('#boxid2');
+			return false;
+		}
+		return true;
+	}
+	function checkpw(){
+		var pw = $('#pw').val();
+		var regex =/^\w*([A-z]\d|\d[A-z])\w*$/;
+		clearBox('#boxid3');
+		clearBox('#boxid4');
+		if(pw.length <8 || pw.length > 20){
+			showBox('#boxid3');
+			return false;
+		}
+		if(!checkValidation(regex,pw)){
+			//메세지를 출력
+			showBox('#boxid4');
+			return false;
+		}
+		return true;
+	}
+	function checkrepw(){
+		var repw = $('#repw').val();
+		var pw = $('#pw').val();
+		clearBox('#boxid5');
+		if(pw != repw){
+			showBox('#boxid5');
+			return false;
+		}
+		return true;
+	}
+	clear();
+	});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>Document</title>
+	<style>
+		div{
+			width: 80px;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			font-size: 40px;
+			display: inline-block;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div class="test">5</div>
+	<script>
+		$(document).ready(function(){
+			$('div').first().css('border-color','red'); //first() : 선택된 객체들중 첫번째 객체
+			$('div').last().css('border-color','blue'); //last() : 선택된 객체들중 마지막 객체
+			$('div').eq(1).css('font-weight','700'); //eq(num) : 선택된 객체중 num+1번째 객체
+			// $('div').filter('.test').css('color','red'); //div에서 필터링해서 클래스가 test인 애를 찾는거
+			$('div.test').css('color','red'); //위에꺼랑 똑같음
+			$('div').not('.test').css('background-color','yellow'); //filter의 반대
+
+		});
+		</script>
+</body>
+</html>

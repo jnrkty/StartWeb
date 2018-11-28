@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="jquery.js"></script>
+	<title>Document</title>
+	<style>
+		.outline-red{
+			outline-color: red;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="id" value="123">
+	<input type="text" id="input" class="pw" value="456">
+	<input type="text" class="pw" value="111">
+	<button class="btn">클릭1</button>
+	<button class="btn">클릭2</button>
+	<form class="form">
+		<button>제출</button>
+	</form>
+	<script>
+		// ex1에서 아웃라인 색깔만 바꾼거
+
+
+		$(document).ready(function(){
+
+			$('#input').focus(function(){
+				$(this).addClass('outline-red');
+			})
+			$('#input').blur(function () {
+				$(this).removeClass('outline-red');
+			});
+
+			//객체의 값을 가져올 때에는 val()
+			//설정할 때에는 val(설정값)을 이용
+			var id = $('#id').val();
+			console.log(id);
+			var pw = $('.pw').val();
+			console.log(pw);
+			$('#id').val('789');
+			$('.pw').val('7890'); //클래스 이름이 pw인 객체들의 value를 7890으로 바꿔라
+			$('.btn').click(function(){ //클래스 이름이 btn인 객체들이 클릭되면 function()을 실행해라
+				console.log('클릭됐습니다');
+			});
+			$('.form').submit(function(){
+				console.log('제출 실패');
+				return false;
+			});
+			console.log($('#id').css('color'));
+			$('#id').css('color','red');
+			$('#id').css('background-color','yellow');
+		});
+
+		</script>
+</body>
+</html>
