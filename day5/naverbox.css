@@ -774,3 +774,22 @@ position: absolute;
 	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_search.svg);
 	background-position: -33px -60px;
 }
+
+
+/* 제이쿼리 적용 */
+.auto-down-box{
+	position: absolute;
+	background-color: white;
+	border: 1px solid black;
+	width: 523px;
+	height: 80px;
+	left: -447px;
+	top: 50%;
+	margin-top: 25px;
+	z-index: 1;
+	line-height: 60px;
+	padding: 10px;
+}
+.display-none{
+	display: none;
+}

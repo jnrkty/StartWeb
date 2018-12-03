@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<p class="text">제 이름은</p>
+	<script>
+		$(document).ready(function(){
+			$('p').prepend('안녕하세요'); //p태그 전에
+			$('p').append('홍길동 입니다'); //p태그 후에
+			$('p.text').before('<p>자기소개 시작</p>'); //p태그이면서 클래스가 text인거의 전 
+			$('p.text').after('<p>자기소개 끝</p>'); //p태그이면서 클래스가 text인거의 후
+		});
+
+		//$(A).prepend(B) : 부모 A태그 가장 앞에 B태그를 위치시킴 : <p>여기에 값이들어감  중앙  </p>
+		//$(A).before(B) : A객체 앞에 B를 위치시킴 : 여기에 값이들어감<p>  중앙  </p>
+	</script>
+</body>
+</html>

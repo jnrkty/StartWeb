@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<link rel="stylesheet" href="ex6.css">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 메뉴1, 메뉴2, 메뉴3을 가지는 네비게이션을 생성하고, 
+		가로의 길이가 640px 이하가 되면 메뉴1, 메뉴2, 메뉴3을 없애고 햄버거 메뉴를 보여준다 -->
+
+	<nav>
+		<ul id="menu">
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+		</ul>
+		<ul id="ham">
+			<i class="ham-menu"></i>
+		</ul>
+		<ul id="sub-ham">
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+		</ul>
+	</nav>
+	1
+	<script>
+		$(document).ready(function(){
+			$('#ham').click(function(){
+				$('#sub-ham').toggleClass('display-block');
+				});
+				$(window).resize(function(){
+				if($(window).width()>640){
+					$('#sub-ham').removeClass('display-block');
+				}
+			});
+			});
+
+	</script>
+</body>
+</html>

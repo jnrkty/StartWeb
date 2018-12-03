@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>Document</title>
+</head>
+<button class="btn">버튼</button>
+<input type="text" id=text>
+<body>
+	<!--1. 버튼을 클릭하면 input창의 텍스트 출력하기
+			2. 입력창에 입력된 값이 변경되면 콘솔에 해당 입력값이 출력하기-->
+	<script>
+		$(document).ready(function () {
+			//여기에 var id하면 값을 가져올 수 없다 한번만 실행되고 말기 때문에 클릭했을땐 값이 안나온다
+			
+			$('.btn').click(function(){
+			//val() : input태그의 값을 가져올 때 속성 value에 저장된 값을 가져옴
+			//text() : input태그가 아닌 태그의 문자열을 가져올 때
+			//html() : 해당 객체 안에 있는 html 코드를 가져올 때
+				var id = $('#text').val();
+				//window.alert(id);
+				window.alert(getVal('#text'));
+			});
+			//this는 이벤트 동작 객체와 값을 가져오거나 변경하려는 객체가 같을 때 사용한다. 
+			//아래예제처럼 이벤트가 실행되는 text id를 가진 객체와 실제 값이 바뀌는 text id를 가진 객체는 동일 객체이기 때문에 this를 사용할 수 있다
+			$('#text').change(function(){
+				console.log(getVal(this));
+			});
+			function getVal(textObj){
+				return $(textObj).val();
+			}
+			});  //간지나게 쓸때는 위에꺼 걍 덜간지나게 쓰려면 밑에꺼
+			// $('#text').blur(function(){
+			// 	var id2 = $('#text').val();
+			// 	console.log(id2);
+			// });
+	</script>
+	
+</body>
+</html>
