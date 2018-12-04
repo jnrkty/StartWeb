@@ -1,0 +1,898 @@
+@charset 'utf-8';
+
+*{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  font-family: Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
+
+}
+
+/* div{
+  border: solid black 1px;
+} */
+.container{
+  min-width: 1100px;
+    
+}
+ul,ol{
+	list-style: none;
+}
+
+.nav-top{
+  /*height: 170px;*/
+}
+.bottom{
+	position: relative;
+  background-color: aliceblue;
+}
+.nav-bottom{
+	border-top: 1px solid rgb(241, 243, 246);
+	border-bottom: 1px solid rgb(208, 216, 228);
+    
+	/*
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	*/
+  /*height: 47px;*/
+}
+
+.nav-bottom-inner{
+  position: relative;
+  margin: 0 auto;
+  height:47px;
+  width: 1080px;
+  border-color: blue;  
+}
+.nav-inner{
+	height: 32px;
+	font-size: 0;
+	position: relative;
+}
+.inline-block{
+  display: inline-block;
+}
+.item1{
+  width: 303px;
+  height: 32px;
+  padding: 16px 0 0 4px;
+  font-size: 0px; /* 상자들(item1-1 ~ 1-7) 사이에 자동으로 스페이스만큼의 공백이 생기니까 0으로 해서 딱 붙여준다 */
+}
+/* item1-1부터 itme1-7까지의 display속성을 inline-block으로 바꾸고 높이를 16px로 설정한다*/
+.item1>a>div,
+.item2>a>div{
+  display: inline-block;
+  height: 16px;
+  background-image: url(https://s.pstatic.net/static/www/img/2018/sp_nav_v181019.png);
+}
+.item1-1{
+  width: 25px;
+  background-position: -244px -233px;
+
+}
+.item1-2{
+  width: 27px;
+  background-position: -279px -130px;
+  margin-left: 14px;
+}
+.item1-3{
+  width: 40px;
+  background-position: -150px -182px;
+  margin-left: 14px;
+}
+.item1-4{
+  width: 40px;
+  background-position: -102px -156px;
+  margin-left: 14px;
+}
+.item1-5{
+  width: 26px;
+  background-position: -128px -104px;
+  margin-left: 14px;
+}
+.item1-6{
+  width: 25px;
+  background-position: -107px -285px;
+  margin-left: 14px;
+}
+.item1-7{
+  width: 32px;
+  background-position: -125px -130px;
+  margin-left: 14px;
+  margin-top: -1px;
+}
+.item2{
+  width: 366px;
+  height: 32px;
+	padding: 16px 0 0 14px;
+	font-size: 0;
+}
+.item2-1{
+	width: 26px;
+	background-position: 0 -259px;
+	margin-left: 0px;
+}
+.item2-2{
+	width: 28px;
+	background-position: -279px -26px;
+	margin-left: 14px;
+}
+.item2-3{
+	width: 26px;
+	background-position: -108px -259px;
+	margin-left: 14px;
+}
+.item2-4{
+	width: 40px;
+	background-position: -152px -156px;
+	margin-left: 14px;
+}
+.item2-5{
+	width: 27px;
+	background-position: -279px -208px;
+	margin-left: 14px;
+}
+.item2-6{
+	width: 27px;
+	background-position: -279px -52px;
+	margin-left: 14px;
+}
+.item2-7{
+	width: 26px;
+	background-position: -144px -259px;
+	margin-left: 14px;
+}
+.item2-8{
+	width: 13px;
+	background-position: -140px -78px;
+	margin-left: 14px;
+}
+.item2-9{
+	width: 27px;
+	background-position: -279px -78px;
+	margin-left: 14px;
+}
+.item3{
+	width: 1px;
+	height: 14px;
+	background-color: #ebeef3;
+	margin: 18px 16px 0;
+}
+.item4{
+	width: 55px;
+	height: 16px;
+	background-position: 0 -104px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_nav_v181019.png);
+	cursor: pointer;
+}
+.item5{
+	width: 198px;
+	height: 20px;
+	position: absolute;
+	right: 0;
+	top: calc((100% + 15px) / 2); /* 실제 네이버는 꽉차게 100%인데 우리는 밑에 15px공백이 있다 네이버 따라하려면 +15px해줘야함 */
+	margin-top: -10px;
+	line-height: 20px;
+	overflow: hidden;
+}
+.rank-num{
+	color: #00ab33;
+	font-size: 16px;
+	font-family: Arial, Sans-serif;
+	line-height: 20px;
+}
+.rank{
+	letter-spacing: -1px;
+	font-size: 14px;
+}
+.item6{
+	width: 11px;
+	height: 6px;
+	position: absolute;
+	right: 0;
+	top: calc((100% + 15px) / 2);
+	margin-top: -3px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_main_v181019.png);
+	background-position: -187px -73px;
+}
+
+.nav-top-inner{
+    margin: 0 auto;
+    height: 170px;
+    width: 1080px;
+    border-color: red;
+    position: relative;
+}
+.nav-links{
+    position: absolute;
+    right:-5px;
+    top: 11px;
+}
+.nav-links>a{
+    text-decoration: none;
+}
+.favorite{
+    line-height: 22px;
+    font-size: 11px;
+    color: #888;
+    float: left;
+}
+.favorite:hover{
+    text-decoration: underline;
+}
+.jrnaver,
+.happy{
+    padding: 5px;
+    float: left;
+}
+.jrnaver-inner{
+    background-image: url(https://s.pstatic.net/static/www/img/2018/sp_main_v181019.png);
+    background-position: 0 -120px;
+    height: 11px;
+    width: 58px; /*부모 태그의 가로의 길이가 미지정이기 때문에*/
+}
+.jrnaver-inner:hover{
+    background-position: -68px -120px;
+}
+.happy-inner{
+    background-image: url(https://s.pstatic.net/static/www/img/2018/sp_main_v181019.png);
+    background-position: -143px -52px;
+    height: 11px;
+    width: 34px;
+}
+.happy-inner:hover{
+    background-position: -144px -73px;
+}
+
+.bottom-inner{
+    width: 1100px;
+    margin: 0 auto;
+    padding: 8px 10px 0; /* 순서 : 상 우 하 좌*/
+    /* padding: 8px 10px 0 10px; */
+}
+.bottom-wrap{
+    font-size: 0;
+}
+/* bottom-left클래스와 bottom-right클래스에 같이 적용될 css*/
+
+.bottom-left,
+.bottom-right{
+    display: inline-block;
+
+}
+.bottom-left{
+    width: 740px;
+}
+.bottom-right{
+    width: 332px;
+    float: right;
+
+}
+.bottom-left>div,
+.bottom-right>div{
+	margin-bottom: 8px;
+	border: solid 1px rgb(222, 225, 235);
+}
+.bottom-left>div.box1{
+    height: 120px;
+    border-color: rgb(248, 181, 79);
+}
+.box2{
+	height: 46px;
+	position: relative;
+	background-color: white;
+}
+.box2-inner{
+	padding: 15px 0 0 16px;
+}
+.box2-inner2{
+	position: absolute;
+	top: 50%;
+	right: 2px;
+	margin-top: -7px;
+	list-style: none;
+}
+.ul-item{
+	display: inline-block;
+	float: left;
+	margin-right: 14px;
+	font-size: 12px;
+}
+.ul-item>a{
+	display: block;
+	height: 15px;
+	line-height: 16px;
+	font-size: 13px;
+	font-weight: 700;
+	text-decoration: none;
+	color: #666;
+}
+.ul-item>a:hover{
+	color: #000;
+
+}
+.ul-item>a.green{
+	color: #00ab33;
+}
+.ul-item>a.green:hover{
+	color: #0b9500;
+}
+.news{
+	float: left;
+	display: inline-block;
+}
+.news>a{
+	text-decoration: none;
+	color: black;
+	font-family:Dotum,'돋움',Helvetica,"Apple SD Gothic Neo",sans-serif;
+	line-height: 16px;
+	margin-right: 12px;
+}
+.icon-next{
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_newscast_v180511.png);
+	background-position: -256px -100px;
+	display: inline-block;
+	width: 5px;
+	height: 9px;
+	margin-left: 8px;
+}
+.news-content{
+	width: 340px;
+	height: 20px;
+	float: left;
+	overflow: hidden;
+}
+.news-content a{
+	text-decoration: none;
+	color: #222;
+	font-size: 12px;
+}
+.news-content>ul>li{
+	height: 20px;
+}
+.news-content a:visited{
+	color: #888;
+}
+.news-content a:hover{
+	text-decoration: underline;
+}
+.box3{
+	height: 246px;
+	position: relative;
+	height: 244px;
+	border: 1px solid #dee3eb;
+	background: #fff;
+}
+.box3-inner1{
+	height: 45px;
+	border-bottom: 1px solid #ebeef3;
+	position: relative;
+}
+.box3-item1{
+	padding: 13px 0 0 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 0;
+}
+.box3-item1>a{
+	font-size: 14px;
+	line-height: 20px;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+.box3-item2{
+	position: absolute;
+	padding: 13px 0;
+	top: 0;
+	left: 102px;
+	height: 44px;
+	line-height: 20px;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+.box2-inner2::after,
+.box2-inner::arter,
+.api-list::after,
+.box3-menu::after,
+.box3-item3::after,
+.box3-item2::after{
+	clear: both;
+	content: "";
+	display: block;
+}
+.my,
+.all{
+	display: inline-block;
+	float: left;
+	cursor: pointer;
+}
+.my{
+	color: #666;
+}
+.box3-item2>.item3{
+	background-color: black;
+	margin: 2px 15px 0;
+	float: left;
+}
+.box3-item3{
+	height: 44px;
+	width: 216px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.box3-menu{
+	width: 126px;
+	height: 44px;
+	display: inline-block;
+	float: left;
+}
+.box3-menus{
+	width: 32px;
+	height: 44px;
+	margin-right: 10px;
+	float: left;
+}
+.box3-icons{
+	display: block;
+	width: 18px;
+	height: 18px;
+	margin-top: 13px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_newscast_v180511.png);
+}
+.box3-icons.menu{
+	background-position: -228px -124px;
+}
+.box3-icons.list{
+	background-position: 0 -193px;
+}
+.box3-icons.setting{
+	background-position: -28px -193px;
+}
+.box3-inner2{
+	height: 200px;
+	position: relative;
+}
+/* .list-wrap{
+	position: relative;
+	width: 100%;
+	height: 200px;
+} */
+.api-list{
+	position: relative;
+	width: 104%;
+	height: 199px;
+	overflow: hidden;
+	font-size: 0;
+}
+ul.api-list>li{
+	width: 123px;
+	height: 67px;
+	z-index: 0;
+	padding: 21px 0 22px;
+	border-right: 1px solid #f1f3f6;
+	float: left;
+}
+ul.api-list>li>a>img{
+	height: 24px;
+	width: auto;
+}
+ul.api-list>li>a{
+	display: block;
+	text-align: center;
+}	
+.border-right{
+	width: 1px;
+	height: 199px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #fff;
+	z-index: 1;
+}
+.border-center1,
+.border-center2{
+	width: 738px;
+	height: 1px;
+	position: absolute;
+	background-color: #f1f3f6;
+	z-index: 1;
+	left: 0;
+}
+.border-center1{
+	top: 66px;
+}
+.border-center2{
+	bottom: 66px;
+}
+.api-link{
+	display: block;
+	height: 100%;
+	text-align: center;
+}
+/* .api-list-border-right{
+position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	display: block;
+	width: 1px;
+	height: 199px;
+	background-color: #fff;
+} */
+/* .api-list-border-horizontal1{
+	top: 66px;
+	left: 0;
+} */
+/* .api-list-border-horizontal2{
+	position: absolute;
+  bottom: 66px;
+  left: 0;
+}
+.api-list-border-horizontal1,
+.api-list-border-horizontal2{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #f1f3f6;
+} */
+.box4{
+    height: 120px;
+    background-color: white;
+    position: relative;
+}
+.box4-inner{
+    height: 93px;
+    padding: 15px 25px;
+}
+.box4-inner>p{
+    color: #888;
+    font-size: 12px;
+    /* line-height : 글자를 입력하면 글자 크기(font-size)와 고정된 길이를 포함한 높이가 지정되는데
+    이 높이가 line-height이다. 보통 line-height에서는 글자 크기를 증가시켜도 높이가 늘어나는 것을 막고자 할 때 사용한다
+    그래서 이렇게 입력하면 글자 크기를 포함한 높이가 14px가 되게 한다
+
+    예 : 두줄로 입력하면 line-height가 자동으로 같이 늘어나서 두줄사이에 살짝 공백이 생기는데,
+    아예 딱 line-heightt를 정해두면 글자는 커졌지만 높이는 안늘어나서 글자가 겹칠 수 있다 */
+    line-height: 14px; 
+}
+.login-btn{
+    display: block;
+    height: 37px;
+    margin-top: 12px;
+    background-image: url("https://s.pstatic.net/static/www/img/2018/sp_login_v180727.png");
+    background-position: 0 -47px;
+}
+.login-links{
+    height: 38px;
+    width: 280px;
+    position: absolute;
+    left: 25px;
+    bottom: 0;
+    font-size: 0;
+}
+.login-links>a{
+    line-height: 38px;
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+
+}
+.login-links>a:hover{
+    text-decoration: underline;
+}
+.box5{
+	height: 142px;
+}
+.box5-top,
+.box5-bottom{
+	background-color: white;
+}
+.box5-top{
+	height: 34px;
+	border-bottom: 1px solid rgb(235, 248, 243);
+	padding-left: 15px;
+	position: relative;
+}
+.box5-bottom{
+	height: 106px;
+}
+.box5-item1{
+	display: inline-block;
+	width: 208px;
+	height: 33px;
+	padding: 9px 0px 7px 0px;
+}
+.day{
+	font-weight: bold;
+	line-height: 17px;
+	font-size: 14px;
+	text-decoration: none;
+	color: black;
+}
+.box5-item2{
+	position: absolute;
+	top: 10px;
+	right: 0;
+	margin-right: 78px;
+	color: #888;
+	font-size: 12px;
+	line-height: 14px;
+	font-family: Tahoma,sans-serif;
+}
+.color-black{
+	color: black;
+	font-size: 12px;
+}
+.box3-dir,
+.box5-item3{
+	width: 68px;
+	height: 33px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 0;
+}
+.box3-dir{
+	width: 90px;
+	height: 44px;
+}
+.box3-prev,
+.box3-next,
+.box5-prev,
+.box5-next{
+	display: inline-block;
+	text-align: center;
+	width: 34px;
+	height: 33px;
+	border-left: 1px solid #ebeef3;
+	text-decoration: none;
+	padding: 11px 0;
+}
+.box3-prev,
+.box3-next{
+	width: 44px;
+	height: 44px;
+	padding: 16px 0;
+}
+.btn-prev{
+	width: 6px;
+	height: 11px;
+	display: inline-block;
+	background-image: url(https://s.pstatic.net/static/www/img/2017/sp_timesquare_v170913a.png);
+	background-position: -433px -303px;
+}
+.btn-next{
+	width: 6px;
+	height: 11px;
+	display: inline-block;
+	background-image: url(https://s.pstatic.net/static/www/img/2017/sp_timesquare_v170913a.png);
+	background-position: -433px -324px;
+}
+.fa-ellipsis-v{
+	color: rgb(227, 231, 238);
+}
+.location{
+	color: #888;
+	font-size: 12px;
+	line-height: 16px;
+	font-weight: 400;
+	text-decoration: none;
+}
+.location:hover{
+	text-decoration: underline;
+}
+.box6{
+	height: 152px;
+}
+.float-right{
+    float: right;
+}
+
+/*로고 관련*/
+.logo-img{
+	display: block; /* 로고이미지 크기를 조절하기 위해 */
+	width: 198px;
+	height: 48px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_search.svg);
+	background-position: -4px -4px;
+}
+.logo-box{
+	position: absolute;
+	left: -4px;
+	top: 50%;
+	margin-top: -25px;
+}
+.input-box{
+	display: inline-block;
+	width: 523px;
+	height: 49px;
+	border: 2px solid #03cf5d;
+}
+.input-box>input{
+	outline: 0;
+	border: 0;
+	width: 405px;
+	height: 23px;
+	margin: 12px 0 0 9px;
+	font-size: 18px;
+	line-height: 23px;
+	font-weight: bold;
+}
+.search-box{
+	position: absolute;
+	left: 219px;
+	top: 50%;
+	margin-top: -20px;
+}
+.search-btn{
+	width: 49px;
+	height: 49px;
+	background-color: #03cf5d;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border: 0;
+}
+.btn-img{
+	width: 21px;
+	height: 21px;
+	position: absolute;
+	left: 14px;
+	top: 14px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_search.svg);
+	background-position: -4px -60px;
+}
+.auto-search{
+	width: 27px;
+	height: 42px;
+	position: absolute;
+	right: 49px;
+	top: 50%;
+	margin-top: -23px;
+	padding: 19px 12px 19px 6px;
+	cursor: pointer;
+}
+.auto-down{
+	width: 9px;
+	height: 4px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_search.svg);
+	background-position: -87px -60px;
+}
+.keyboard{
+	width: 31px;
+	height: 42px;
+	position: absolute;
+	right: 76px;
+	top: 50%;
+	margin-top: -23px;
+	padding: 15px 6px;
+	cursor: pointer;
+}
+.keyboard-img{
+	width: 19px;
+	height: 11px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_search.svg);
+	background-position: -33px -60px;
+}
+
+
+/* 제이쿼리 적용 */
+
+#auto-box{
+	width: 523px;
+	height: 89px;
+	background-color: white;
+	position: absolute;
+	z-index: 5;
+	top: 47px;
+	border: solid 1px rgb(190, 200, 216);
+	display: none;
+}
+
+.display-block-down{
+	background-position: -138px -60px;
+}
+
+.item4-1{
+	background-position: 0 -208px;
+}
+.sub-menu-background{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	opacity: 0.3;
+	z-index: 3; /* sun-menu의 z-index보다 낮게 */
+	display: none;
+}
+.sub-menu-inner{
+	position: relative;
+	width: 1100px;
+	margin: 0 auto;
+	height: 100%;
+}
+.sub-menu-icons{
+	position: absolute;
+	top: -47px;
+	right: -5px;
+	padding-top: 8px;
+	height: 45.8px;
+	background-color: #fff;
+	width: 211px;
+}
+.all-service:visited,
+.all-service{
+	float: left;
+	width: 98px;
+	height: 28px;
+	border: 1px solid #e3e7ee;
+	background-color: #fff;
+	color: #444;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 29px;
+}
+.menu-setting{
+	float: left;
+	margin-left: 5px;
+	width: 68px;
+	height: 28px;
+	border: 1px solid #e3e7ee;
+	background: #fff;
+	color: #444;
+	text-align: center;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 29px; 
+}
+.menu-close{
+	float: left;
+	margin: 2px 0 0 9px;
+	padding: 5px;
+	background-color: #fff;
+}
+.menu-close>span{
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_themecast_v180607.png);
+	width: 17px;
+	height: 17px;
+	background-position: -191px -257px;
+	display: block;
+}
+/* 공통 클래스들 */
+.sub-menu{
+	display: none;
+	height: 327px;
+	background-color: white;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 4;
+}
+.rank-box{
+	position: absolute;
+	top: -1px;
+	left: 50%;
+	margin-left: 250px;
+	min-height: 332px;
+	width: 288px;
+	border: 1px solid #bec8d8;
+	background: #fff;
+	z-index: 4;
+	display: none;
+}
+.rank-box:hover,
+#auto-box.display-block,
+.display-block{
+	display: block;
+}
