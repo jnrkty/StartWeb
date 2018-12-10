@@ -37,4 +37,62 @@ $(document).ready(function(){
 	};
 	ticker('.item5','-20px',400); //ticker함수 실행 (div, h, time)
 	ticker('.news-content','-20px',600);
+
+	$('.api-list>li').hover(function(){
+		// $('.api-list>li>a').toggleClass('display-none');
+		$(this).children('a').toggleClass('display-none');
+		// $('.api-list>li>div').toggleClass('display-block');
+		$(this).children('div').toggleClass('display-block');
+	});
+
+	//box5-bottmom가 7개. 그중 선택할 박스 번호가 index
+	var index = 1;
+	function displayBox5(i){
+		//6개를 일단 다 안보이게 하고 = 기존에 보였던 박스를 안보이게 하기 위해
+		$('.box5-bottom').removeClass('display-block');
+		//선택한 i번째를 보여준다
+		$('.box5-bottom').eq(i-1).addClass('display-block');
+		$('.box5-item2>b').text(i);
+		$('.location').removeClass('display-inline-block');
+		$('.location').eq(i-1).addClass('display-inline-block');
+	}
+	displayBox5(index);
+
+	$('.box5-next').click(function(){
+		index++; //박스가 7개이기 때문에 8번째로 가려고 하면 첫번째로 보내준다
+		if(index > 7){ //7페이지에서 또 누르면 1로 돌아가야해서
+			index = 1;
+		}
+		displayBox5(index);
+	});
+
+	$('.box5-prev').click(function(){
+		index--; 
+		if(index <= 0){
+			index = 7;
+		}
+		displayBox5(index);
+	});
+	$('.rank-hover1').css('display','none');
+	$('.rank-hover2').css('display','none');
+	$('.rank-btn1').click(function(){
+		$('.rank-hover1').css('display','block');
+		var rank = $('.rank-hover').attr('id');
+		var num = gethover(rank, 'rank-hover');
+		displayContent(num);
+	})
+	function displayContent(index){
+		('.rank-hover1').css('display','none');
+		$('#rank-hover-1'+index).css('display','block');
+	}
+
+	$('.rank-btn2').click(function(){
+		$('.rank-hover2').css('display','block');
+	})
+
+	function gethover(rank, hover){
+
+	}
+	displayContent(1);
 });
+

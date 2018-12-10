@@ -595,6 +595,9 @@ position: absolute;
 .box5-bottom{
 	background-color: white;
 }
+.box5-bottom{
+	display: none;
+}
 .box5-top{
 	height: 34px;
 	border-bottom: 1px solid rgb(235, 248, 243);
@@ -680,6 +683,7 @@ position: absolute;
 	color: rgb(227, 231, 238);
 }
 .location{
+	display: none;
 	color: #888;
 	font-size: 12px;
 	line-height: 16px;
@@ -868,6 +872,11 @@ position: absolute;
 	background-position: -191px -257px;
 	display: block;
 }
+ul.api-list>li:hover{
+	background-color: #f9fafc;
+	position: relative;
+}
+
 /* 공통 클래스들 */
 .sub-menu{
 	display: none;
@@ -891,8 +900,47 @@ position: absolute;
 	z-index: 4;
 	display: none;
 }
+
+.rank-btn1,
+.rank-btn2{
+	float: left;
+	border: 1px solid black;
+	height: 20px;
+	width: 80px;
+	cursor: pointer;
+}
+.rank1{
+	margin-top: 30px;
+	margin-left: 60px;
+	height: 200px;
+	width: 150px;
+	border: 1px solid black;
+}
+.rank2{
+	margin-top: -200px;
+	margin-left: 60px;
+	height: 200px;
+	width: 150px;
+	border: 1px solid black;
+}
 .rank-box:hover,
 #auto-box.display-block,
+ul.api-list>li>div.display-block,
 .display-block{
 	display: block;
+}
+.api-list>li>div{
+	display: none;
+	width: 95px;
+	margin: 0 auto;
+	background-color: white;
+}
+
+ul.api-list>li>a.display-none, /* ul이 더 쎄서 따로 none 준다 */
+.display-none{
+	display: none;
+}
+
+.display-inline-block{
+	display: inline-block;
 }

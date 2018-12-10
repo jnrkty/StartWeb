@@ -1,0 +1,41 @@
+@charset 'utf-8';
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+/* float:left를 적용할 객체의 부모의 높이가 0이 되는것을 방지하는 방법중 하나 */
+		/* .menu::after{ 
+			display: block;
+			clear: both;
+			content: "";
+		} */
+.menu{
+	height: 40px;
+	border-bottom: 1px solid black;
+}
+.control,
+.tabmenu{
+	float: left; /* float left를 하면 display block이 필요없음 */
+	height: 40px;
+	line-height: 30px;
+	font-size: 15px;
+	width: 100px;
+	border: 1px solid black;
+	text-align: center;
+	padding-top: 3px;
+	cursor: pointer;
+	z-index: 1;
+}
+/* .contents{
+	height: 200px;
+	width: 100%;
+	border: 1px solid black;
+} */
+
+.content{
+	height: 500px;
+	border: 1px solid black;
+	border-top: none;
+}
