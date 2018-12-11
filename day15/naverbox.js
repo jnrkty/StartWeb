@@ -73,26 +73,75 @@ $(document).ready(function(){
 		}
 		displayBox5(index);
 	});
-	$('.rank-hover1').css('display','none');
-	$('.rank-hover2').css('display','none');
-	$('.rank-btn1').click(function(){
-		$('.rank-hover1').css('display','block');
-		var rank = $('.rank-hover').attr('id');
-		var num = gethover(rank, 'rank-hover');
-		displayContent(num);
-	})
-	function displayContent(index){
-		('.rank-hover1').css('display','none');
-		$('#rank-hover-1'+index).css('display','block');
-	}
+	$('.rank-left').click(function(){
+		$('.rank-lists').first().css('display','block');
+		$('.rank-lists').last().css('display','none');
+		$(this).css('background-color','#ffff');
+		$('.rank-right').css('background-color','#f9fafc');
+	});
+	$('.rank-right').click(function(){
+		$('.rank-lists').last().css('display','block');
+		$('.rank-lists').first().css('display','none');
+		$(this).css('background-color','#ffff');
+		$('.rank-left').css('background-color','#f9fafc');
+	});
 
-	$('.rank-btn2').click(function(){
-		$('.rank-hover2').css('display','block');
-	})
+	$('.rank-lists').first().css('display','block');
+	$('.rank-lists').last().css('display','none');
 
-	function gethover(rank, hover){
+	var selectedMenuCnt = 0; //사용자가 지정한 메뉴 갯수
+	var menuArr = ["dici","newsi","stocki","dealeri","mapi","moviei","musici","booki","webtooni"];
+	$('.menu-setting').click(function(){ 
+		var cnt = 0;
+		$('.item2-1').each(function(){ //빈박스 다섯개만 보여주기
+			$(this).prop('class','item2-1');
+			cnt++;
+			if(cnt > 5){
+				$(this).addClass('display-none');
+			}
+		});
+		$('.menu-close').click(function(){
+			var i = 0;
+			if(selectedMenuCnt == 0){ //빈박스 다섯개 없애서 원래대로 돌리는 코드
+				$('.item2-1').each(function(){
+					$(this).prop('class','item2-1 back-img');
+					$(this).addClass(menuArr[i++]);
+				})
+			}
 
-	}
-	displayContent(1);
+		});
+	
+		
+	// 	('display','none');
+	// 	$('.menu-plus').css('display','inline-block');
+	// 	$('.checkbox').css('display','block');
+	// });
+	// $('input[type="checkbox"]').click(function(){
+	// 	var arr = new Array();
+	// 	$('input[class="text"]').each(function(){
+	// 		var text = $(this).val();
+	// 		$(this).val('');
+	// 		if(text != ''){
+	// 			arr.push(text);
+	// 		}
+	// 	});
+	// 	var check = $(this);
+	// 	var find = arr.indexOf(check.val());
+	// 	if(find<0 && arr.length == 5){ //체크한게 배열에 없고 꽉찼을 때 체크한거무조건 비활성화
+	// 		console.log('꽉차서 비활성화');
+	// 		check.prop('checked',''); 
+	// 	} else if(find<0 && arr.length != 5) { //체크한게 배열에 없고 꽉차지 않았으면 체크한거 추가
+	// 		console.log('배열에없어서 추가');
+	// 		arr.push(check.val());
+	// 		check.prop('checked','checked')
+	// 	} else{ //체크한게 배열에 있으면 배열에서 해당 문자열을 제거
+	// 		console.log('체크한게 배열에있어서 제거');
+	// 		arr.splice(find,1);
+	// 	}
+	// 	for(var i=0; i<arr.length; i++){
+	// 		$('input[class="text"]').eq(i).val(arr[i]);
+	// 	}
+
+	});
 });
 

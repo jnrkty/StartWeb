@@ -62,8 +62,7 @@ ul,ol{
   font-size: 0px; /* 상자들(item1-1 ~ 1-7) 사이에 자동으로 스페이스만큼의 공백이 생기니까 0으로 해서 딱 붙여준다 */
 }
 /* item1-1부터 itme1-7까지의 display속성을 inline-block으로 바꾸고 높이를 16px로 설정한다*/
-.item1>a>div,
-.item2>a>div{
+.item1>a>div{
   display: inline-block;
   height: 16px;
   background-image: url(https://s.pstatic.net/static/www/img/2018/sp_nav_v181019.png);
@@ -105,55 +104,64 @@ ul,ol{
   margin-top: -1px;
 }
 .item2{
-  width: 366px;
+  /* width: 366px; */
   height: 32px;
 	padding: 16px 0 0 14px;
 	font-size: 0;
 }
+
 .item2-1{
+	width: 64px;
+	height: 30px;
+	margin-left: 14px;
+	display: block;
+	border: 1px solid black;
+	margin-top: -9px;
+	float: left;
+}
+.back-img{
+	border: none;
+	margin-top: 0;
+	display: inline-block;
+	height: 16px;	
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_nav_v181019.png);
+}
+.dici{
 	width: 26px;
 	background-position: 0 -259px;
-	margin-left: 0px;
+	margin-left: 0;
 }
-.item2-2{
+.newsi{
 	width: 28px;
 	background-position: -279px -26px;
-	margin-left: 14px;
 }
-.item2-3{
+.stocki{
 	width: 26px;
 	background-position: -108px -259px;
-	margin-left: 14px;
 }
-.item2-4{
+.dealeri{
 	width: 40px;
 	background-position: -152px -156px;
-	margin-left: 14px;
 }
-.item2-5{
+.mapi{
 	width: 27px;
 	background-position: -279px -208px;
-	margin-left: 14px;
 }
-.item2-6{
+.moviei{
 	width: 27px;
 	background-position: -279px -52px;
-	margin-left: 14px;
 }
-.item2-7{
+.musici{
 	width: 26px;
 	background-position: -144px -259px;
-	margin-left: 14px;
 }
-.item2-8{
+.booki{
 	width: 13px;
 	background-position: -140px -78px;
-	margin-left: 14px;
 }
-.item2-9{
+.webtooni{
 	width: 27px;
 	background-position: -279px -78px;
-	margin-left: 14px;
 }
 .item3{
 	width: 1px;
@@ -831,7 +839,7 @@ position: absolute;
 	padding-top: 8px;
 	height: 45.8px;
 	background-color: #fff;
-	width: 211px;
+	width: 230px;
 }
 .all-service:visited,
 .all-service{
@@ -900,32 +908,43 @@ ul.api-list>li:hover{
 	z-index: 4;
 	display: none;
 }
-
-.rank-btn1,
-.rank-btn2{
+.rank-top{
+	height: 46px;
+	padding: 26px 26px 0;
+}
+.rankb{
+	height: 24px;
+	padding-top: 5px;
+	border: 1px solid #e3e7ee;
+	display: block;
 	float: left;
-	border: 1px solid black;
-	height: 20px;
-	width: 80px;
-	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #888;
+	font-size: 12px;
+	line-height: 14px;
+	background-color: #f9fafc;
 }
-.rank1{
-	margin-top: 30px;
-	margin-left: 60px;
-	height: 200px;
-	width: 150px;
-	border: 1px solid black;
+.rank-left{
+	width: 128px;
+	border-right: none;
+	background-color: #f9fafc;
 }
-.rank2{
-	margin-top: -200px;
-	margin-left: 60px;
-	height: 200px;
-	width: 150px;
-	border: 1px solid black;
+.rank-right{
+	width: 129px;
 }
+.rank-list{
+	height: 22px;
+	padding: 4px 0 0 21px;
+}
+.rank-btn1{
+	height: 30px;
+	padding: 0 9px 6px 17px;
+}
+
+
 .rank-box:hover,
 #auto-box.display-block,
-ul.api-list>li>div.display-block,
 .display-block{
 	display: block;
 }
@@ -943,4 +962,50 @@ ul.api-list>li>a.display-none, /* ul이 더 쎄서 따로 none 준다 */
 
 .display-inline-block{
 	display: inline-block;
+}
+h3{
+	padding-top: 6px;
+	color: #000;
+	vertical-align: top;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 16px;
+}
+.menu-plus{
+	display: none;
+	padding-left: 14px;
+	position: relative;
+	float: left;
+	padding-top: 16px;
+	padding-left: 4px;
+}
+.menu-plusbox{
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+.empty{
+	display: block;
+	margin-top: -8px;
+	margin-left: -10px;
+	width: 62px;
+	height: 28px;
+	border: 1px solid #e3e7ee;
+	background: #fcfdfe;
+	margin-left: 0;
+}
+.checkbox{
+	display: none;
+}
+h3>li{
+	width: 100px;
+}
+.text{
+	display: block;
+	margin-top: -8px;
+	margin-left: -10px;
+	width: 62px;
+	height: 28px;
+	border: 1px solid #e3e7ee;
+	background: #fcfdfe;
 }
