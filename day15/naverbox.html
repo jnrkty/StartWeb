@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 		<script src="//code.jquery.com/jquery-3.3.1.js"></script>
 		<script src="naverbox.js"></script>
+		<script src="sub-menu.js"></script>
 		<link rel="stylesheet" href="naverbox.css">
     <title>Document</title>
 </head>
@@ -216,23 +217,43 @@
 				</div>
 					<div class="sub-menu">
 						<div class="sub-menu-inner">
-							<h3>ㄱ-ㄷ</h3>
-							<ul>
-								<input type="checkbox" class="checkbox" value="하나">하나
-								<input type="checkbox" class="checkbox" value="둘">둘
-								<input type="checkbox" class="checkbox" value="셋">셋
-								<input type="checkbox" class="checkbox" value="넷">넷
-								<input type="checkbox" class="checkbox" value="다섯">다섯
-								<input type="checkbox" class="checkbox" value="여섯">여섯
-								<input type="checkbox" class="checkbox" value="일곱">일곱
-							</ul>
 						<div class="sub-menu-icons">
-							<a href="#" class="all-service">서비스 전체보기</a>
-							<a href="#" class="menu-setting">메뉴설정</a>
 							<a href="#" class="menu-close">
 								<span></span>
 							</a>
+							<a href="#" class="sub-menu-a menu-setting">메뉴설정</a>
+							<a href="#" class="sub-menu-a all-service">서비스 전체보기</a>
+							<a href="#" class="sub-menu-a cancel display-none">취소</a>
+							<a href="#" class="sub-menu-a ok display-none">확인</a>
+							<a href="#" class="sub-menu-a init display-none">초기화</a>
 						</div>
+						<div class="sub-menu-div">
+							<div>
+								<input type="checkbox" id="dic" value="dici" class="display-none">
+								<label for="dic">사전</label>
+							</div>
+							<div>
+								<input type="checkbox" id="news" value="newsi" class="display-none">
+								<label for="news">뉴스</label>
+							</div>
+							<div>
+								<input type="checkbox" id="stock" value="stocki" class="display-none">
+								<label for="stock">증권</label>
+							</div>
+							<div>
+								<input type="checkbox" id="dealer" value="dealeri" class="display-none">
+								<label for="dealer">부동산</label>
+							</div>
+							<div>
+								<input type="checkbox" id="map" value="mapi" class="display-none">
+								<label for="map">지도</label>
+							</div>
+								<div>
+								<input type="checkbox" id="movie" value="moviei" class="display-none">
+								<label for="movie">영화</label>
+							</div>
+						</div>
+						<div class="sub-menu-div"></div>
 						</div>
 					</div>
 				<div class="bottom-inner">

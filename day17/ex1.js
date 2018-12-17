@@ -23,7 +23,7 @@ $(document).ready(function (){
 		}
 		//체크박스의 value가 배열에 있으면 배열에서 해당 문자열을 제거
 		else{
-			arr.splice(isContain,1); //체크한걸 제거하고 띄워져있는건 하나가 남는다
+			arr.splice(isContain,1); //체크한걸 제거한다(한개)
 		}
 		//배열에 있는 문자열을 input창에 하나씩 뿌려줌
 		for(var i=0; i<arr.length; i++){ 

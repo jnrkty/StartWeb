@@ -6,13 +6,17 @@ $(document).ready(function(){
 	})
 
 	$('.item4').click(function(){
-		$(this).toggleClass('item4-1');
-		$('.sub-menu').toggleClass('display-block');
-		$('.sub-menu-background').toggleClass('display-block');
-	});
-	$('.menu-close').click(function(){
+		//접기 또는 더보기 버튼을 클릭하면 메뉴에 있는 배열을 임시 배열에 저장한다
+		selectedmenu = menuArr2.slice();
 		menu();
+		closeSubmenu();
+		initcheck();
+		displaymenu();
+		checkboxmenu();
 	});
+	// $('.menu-close').click(function(){
+	// 	menu();
+	// });
 	function menu(){
 		$('.sub-menu-background').toggleClass('display-block');
 		$('.sub-menu').toggleClass('display-block');
@@ -90,58 +94,235 @@ $(document).ready(function(){
 	$('.rank-lists').last().css('display','none');
 
 	var selectedMenuCnt = 0; //사용자가 지정한 메뉴 갯수
-	var menuArr = ["dici","newsi","stocki","dealeri","mapi","moviei","musici","booki","webtooni"];
-	$('.menu-setting').click(function(){ 
+	var menuArr = ["dici","newsi","stocki","dealeri","mapi","moviei","musici","booki","webtooni"]; //기본메뉴
+	$('.menu-setting').click(function(){
+		createcheck(); 
 		var cnt = 0;
-		$('.item2-1').each(function(){ //빈박스 다섯개만 보여주기
-			$(this).prop('class','item2-1');
+		$('.item2-1').each(function(){ 
+			//기본 코드에 item2-1과 back-img의 각 아이콘 클래스가 없는데 back-img와 아이콘 클래스를 제거하기 위해 prop함수의 class를 덮어쓰기한다
+			if(menuArr2.length <= cnt){
+				$(this).prop('class','item2-1');
+				if(cnt > 4){
+					$(this).addClass('display-none');
+				}
+			} 
 			cnt++;
-			if(cnt > 5){
-				$(this).addClass('display-none');
-			}
 		});
-		$('.menu-close').click(function(){
-			var i = 0;
-			if(selectedMenuCnt == 0){ //빈박스 다섯개 없애서 원래대로 돌리는 코드
-				$('.item2-1').each(function(){
-					$(this).prop('class','item2-1 back-img');
-					$(this).addClass(menuArr[i++]);
-				})
-			}
+		$('.sub-menu-div input[type=checkbox]').each(function(){
+			$(this).removeClass('display-none');
+		});
+			$('.all-service').addClass('display-none');
+			$(this).addClass('display-none');
+			$('.ok').removeClass('display-none');
+			$('.init').removeClass('display-none');
+			$('.cancel').removeClass('display-none');
+		});
+	$('.menu-close').click(function(){
+		selectedmenu = [];
+		menu();
+		checkboxmenu();
+		closeSubmenu();
+		initcheck();
+	});
 
+	$('.cancel').click(function(){
+		initcheck();
+		checkboxmenu();
+		selectedmenu = menuArr2.slice();
+		$('.all-service').removeClass('display-none');
+		$('.menu-setting').removeClass('display-none');
+		$('.ok').addClass('display-none');
+		$('.init').addClass('display-none');
+		$('.cancel').addClass('display-none');
+		var i = 0;
+		if(menuArr2.length == 0){
+			$('.item2-1').each(function(){
+				$(this).prop('class','item2-1 back-img');
+				$(this).addClass(menuArr[i++]);
+			});
+		} else {
+			$('.item2-1').each(function(){
+				if(menuArr2.length > i){
+				$(this).prop('class','item2-1 back-img');
+				$(this).addClass(menuArr2[i++]);
+				} else {
+					$(this).prop('class','item2-1 display-none')
+				}
+			});	
+		}
+
+		$('.sub-menu-div input[type=checkbox]').each(function(){
+			$(this).addClass('display-none');
 		});
+	});
+	/* 메뉴설정에서 선택한 메뉴들을 저장하는 배열 */
+	var selectedmenu = [];
+	/* 실제 네이버에서 뿌려줄 메뉴 */
+	var menuArr2 = [];
+	$('.sub-menu-div input[type="checkbox"]').click(function(){
+		//클릭한 체크박스의 value를 가져옴
+		var check = $(this);
+		//배열에 해당 체크박스의 value가 있는지를 확인
+		var isContain = selectedmenu.indexOf(check.val());
+		var maxSize = 5;
+		//체크박스의 value가 배열에 없고(못찾았고-1) 배열의 길이가 maxSize이면(input 5개가 다 꽉찼으면) 해당(남은) 체크박스의 체크를 무조건 비활성화
+		if(isContain<0 && selectedmenu.length == maxSize){
+			check.prop('checked','');
+		}
+		//길이가 maxSize가 아니면(input5개가 꽉찬게 아니면) 해당 배열에 추가를 하고 해당 checkbox의 체크를 활성화 한다
+		else if(isContain<0 && selectedmenu.length != maxSize){
+			selectedmenu.push(check.val());
+			check.prop('checked','checked');
+		}
+		//체크박스의 value가 배열에 있으면 배열에서 해당 문자열을 제거
+		else{
+			selectedmenu.splice(isContain,1); //체크한걸 제거한다(한개)
+		}
+		var cnt = 0;
+		$('.item2-1').each(function(){
+			if(cnt < selectedmenu.length){
+			$(this).prop('class','item2-1 back-img');
+			$(this).addClass(selectedmenu[cnt++]);
+			}
+			else{
+				$(this).prop('class','item2-1');
+				if(cnt > 4)
+					$(this).addClass('display-none');
+				cnt++;
+			}
+		})
+	});
+	$('.ok').click(function(){
+		menuArr2 = selectedmenu.slice();
+		menu();
+		closeSubmenu();
+		initcheck();
+	});
+	$('.init').click(function(){
+		menuArr2 = [];
+		selectedmenu = [];
+		alert('초기 설정으로 돌아갑니다');
+		closeSubmenu();
+		menu();
+		checkboxmenu();
+		initcheck();
+	});
+	function menu(){
+		$('.sub-menu-background').toggleClass('display-block');
+		$('.sub-menu').toggleClass('display-block');
+		$('.item4').toggleClass('item4-1');
+	}
+	//menuArr2에서 저장된 값들만 체크가 되도록 하는 함수
+	function checkboxmenu(){
+		$('.sub-menu-div input[type=checkbox]').each(function(){
+			$(this).prop('checked','');
+			for(var i=0; i<menuArr2.length; i++){
+				if($(this).val() == menuArr2[i]){
+					$(this).prop('checked','checked');
+				}
+			}
+		});
+	}
+	function closeSubmenu(){
+		displaymenu();
 	
-		
-	// 	('display','none');
-	// 	$('.menu-plus').css('display','inline-block');
-	// 	$('.checkbox').css('display','block');
-	// });
-	// $('input[type="checkbox"]').click(function(){
-	// 	var arr = new Array();
-	// 	$('input[class="text"]').each(function(){
-	// 		var text = $(this).val();
-	// 		$(this).val('');
-	// 		if(text != ''){
-	// 			arr.push(text);
+		$('.sub-menu-div input[type=checkbox]').each(function(){
+			$(this).addClass('display-none');
+		});
+		$('.all-service').removeClass('display-none');
+		$('.menu-setting').removeClass('display-none');
+		$('.ok').addClass('display-none');
+		$('.init').addClass('display-none');
+		$('.cancel').addClass('display-none');
+	}
+	function initcheck(){
+		$('.sub-menu-div label').each(function(){
+			$(this).prop('for','');
+		})
+	}
+	function createcheck(){
+		var i = 0;
+		var checkbox = $('.sub-menu-div input[type=checkbox]');
+		$('.sub-menu-div label').each(function(){
+			$(this).prop('for',checkbox.eq(i++).prop('id'));
+		})
+	}
+	function displaymenu(){
+		var i = 0;
+		if(menuArr2.length == 0){
+			$('.item2-1').each(function(){
+				$(this).prop('class','item2-1 back-img');
+				$(this).addClass(menuArr[i++]);
+			});
+		} else {
+			$('.item2-1').each(function(){
+				if(menuArr2.length > i){
+				$(this).prop('class','item2-1 back-img');
+				$(this).addClass(menuArr2[i++]);
+				} else {
+					$(this).prop('class','item2-1 display-none')
+				}
+			});
+		}
+	}
+	// $('.menu-setting').click(function(){ 
+	// 	var cnt = 0;
+	// 	$('.item2-1').each(function(){ //빈박스 다섯개만 보여주기
+	// 	
+	// 		$(this).prop('class','item2-1');
+	// 		cnt++;
+	// 		if(cnt > 5){
+	// 			$(this).addClass('display-none');
 	// 		}
 	// 	});
-	// 	var check = $(this);
-	// 	var find = arr.indexOf(check.val());
-	// 	if(find<0 && arr.length == 5){ //체크한게 배열에 없고 꽉찼을 때 체크한거무조건 비활성화
-	// 		console.log('꽉차서 비활성화');
-	// 		check.prop('checked',''); 
-	// 	} else if(find<0 && arr.length != 5) { //체크한게 배열에 없고 꽉차지 않았으면 체크한거 추가
-	// 		console.log('배열에없어서 추가');
-	// 		arr.push(check.val());
-	// 		check.prop('checked','checked')
-	// 	} else{ //체크한게 배열에 있으면 배열에서 해당 문자열을 제거
-	// 		console.log('체크한게 배열에있어서 제거');
-	// 		arr.splice(find,1);
-	// 	}
-	// 	for(var i=0; i<arr.length; i++){
-	// 		$('input[class="text"]').eq(i).val(arr[i]);
-	// 	}
+	// 	$('.menu-close').click(function(){
+	// 		var i = 0;
+	// 		if(selectedMenuCnt == 0){ //빈박스 다섯개 없애서 원래대로 돌리는 코드
+	// 			$('.item2-1').each(function(){
+	// 				$(this).prop('class','item2-1 back-img');
+	// 				$(this).addClass(menuArr[i++]);
+	// 			})
+	// 		}
 
-	});
+	// 	});
+	// 	/* 메뉴설정에서 선택한 메뉴들을 저장하는 배열 */
+	// 	var selectedmenu = [];
+	// 	/* 실제 네이버에서 뿌려줄 메뉴 */
+	// 	var menuArr2 = [];
+	// 	$('.sub-menu-div input[type="checkbox"]').click(function(){
+	
+	// 		//클릭한 체크박스의 value를 가져옴
+	// 		var check = $(this);
+	// 		//배열에 해당 체크박스의 value가 있는지를 확인
+	// 		var isContain = selectedmenu.indexOf(check.val());
+	// 		var maxSize = 5;
+	// 		//체크박스의 value가 배열에 없고(못찾았고-1) 배열의 길이가 maxSize이면(input 5개가 다 꽉찼으면) 해당(남은) 체크박스의 체크를 무조건 비활성화
+	// 		if(isContain<0 && selectedmenu.length == maxSize){
+	// 			check.prop('checked','');
+	// 		}
+	// 		//길이가 maxSize가 아니면(input5개가 꽉찬게 아니면) 해당 배열에 추가를 하고 해당 checkbox의 체크를 활성화 한다
+	// 		else if(isContain<0 && selectedmenu.length != maxSize){
+	// 			selectedmenu.push(check.val());
+	// 			check.prop('checked','checked');
+	// 		}
+	// 		//체크박스의 value가 배열에 있으면 배열에서 해당 문자열을 제거
+	// 		else{
+	// 			selectedmenu.splice(isContain,1); //체크한걸 제거한다(한개)
+	// 		}
+	// 		var cnt = 0;
+	// 		$('.item2-1').each(function(){
+	// 			if(cnt < selectedmenu.length){
+	// 			$(this).prop('class','item2-1 back-img');
+	// 			$(this).addClass(selectedmenu[cnt++]);
+	// 			}
+	// 			else{
+	// 				$(this).prop('class','item2-1');
+	// 				if(cnt > 4)
+	// 					$(this).addClass('display-none');
+	// 				cnt++;
+	// 			}
+	// 		})
+	// 	});
+	// });
 });
 

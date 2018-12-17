@@ -18,7 +18,7 @@ console.log('id = ' + input[0].value);
 console.log('pw = ' + input[1].value);
 console.log('input 태그의 갯수 : ' + input.length);
 for(var i =0; i<input.length; i++){
-	input[i].value = "" + i;
+	input[i].value = i;
 }
 /* 클래스 이름이 input인 첫번째 객체를 가져오기 때문에
 	 document.getElementsByClassName('input)[0]; 와 같은 결과이다

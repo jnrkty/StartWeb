@@ -129,7 +129,6 @@ ul,ol{
 .dici{
 	width: 26px;
 	background-position: 0 -259px;
-	margin-left: 0;
 }
 .newsi{
 	width: 28px;
@@ -831,6 +830,7 @@ position: absolute;
 	width: 1100px;
 	margin: 0 auto;
 	height: 100%;
+	padding: 20px 0 15px 0;
 }
 .sub-menu-icons{
 	position: absolute;
@@ -839,25 +839,24 @@ position: absolute;
 	padding-top: 8px;
 	height: 45.8px;
 	background-color: #fff;
-	width: 230px;
+	width: 240px;
 }
-.all-service:visited,
 .all-service{
-	float: left;
 	width: 98px;
-	height: 28px;
-	border: 1px solid #e3e7ee;
-	background-color: #fff;
-	color: #444;
-	text-align: center;
-	text-decoration: none;
-	font-size: 12px;
-	line-height: 29px;
 }
 .menu-setting{
-	float: left;
-	margin-left: 5px;
 	width: 68px;
+}
+.init{
+	width: 75px;
+}
+.ok, .cancel{
+	width: 55px;
+}
+
+.sub-menu-a,
+.sub-menu-a:visited{
+	float: right;
 	height: 28px;
 	border: 1px solid #e3e7ee;
 	background: #fff;
@@ -866,9 +865,10 @@ position: absolute;
 	text-decoration: none;
 	font-size: 12px;
 	line-height: 29px; 
+	margin-left: 5px;
 }
 .menu-close{
-	float: left;
+	float: right;
 	margin: 2px 0 0 9px;
 	padding: 5px;
 	background-color: #fff;
@@ -883,6 +883,14 @@ position: absolute;
 ul.api-list>li:hover{
 	background-color: #f9fafc;
 	position: relative;
+}
+.sub-menu-div{
+	float: left;
+	height: 292px;
+	width: 156px;
+	padding-left: 16px;
+	border-left: 1px solid #f1f3f6;
+	border-right: 1px solid #f1f3f6;
 }
 
 /* 공통 클래스들 */
