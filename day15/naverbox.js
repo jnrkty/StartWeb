@@ -6,12 +6,13 @@ $(document).ready(function(){
 	})
 
 	$('.item4').click(function(){
-		//접기 또는 더보기 버튼을 클릭하면 메뉴에 있는 배열을 임시 배열에 저장한다
+		//접기 또는 더보기 버튼을 클릭했을 때 확인을 거치지 않은 선택된 메뉴들을 제거하는 작업
 		selectedmenu = menuArr2.slice();
 		menu();
+		//선택된 사용자 메뉴의 값을 이용하여 체크박스의 체크 여부를 결정
 		closeSubmenu();
+		//체크박스가 없는 라벨을 클릭시 아무 동작을 하지 않도록 해주는 기능
 		initcheck();
-		displaymenu();
 		checkboxmenu();
 	});
 	// $('.menu-close').click(function(){
@@ -111,11 +112,7 @@ $(document).ready(function(){
 		$('.sub-menu-div input[type=checkbox]').each(function(){
 			$(this).removeClass('display-none');
 		});
-			$('.all-service').addClass('display-none');
-			$(this).addClass('display-none');
-			$('.ok').removeClass('display-none');
-			$('.init').removeClass('display-none');
-			$('.cancel').removeClass('display-none');
+			subdetailmenu();
 		});
 	$('.menu-close').click(function(){
 		selectedmenu = [];
@@ -224,16 +221,34 @@ $(document).ready(function(){
 		});
 	}
 	function closeSubmenu(){
+		
+		//사용자가 선택한 메뉴 또는 기본 메뉴를 출력하는 기능
 		displaymenu();
-	
+		//더보기 버튼 클릭시 체크박스가 안보이도록 해주는 기능
 		$('.sub-menu-div input[type=checkbox]').each(function(){
 			$(this).addClass('display-none');
 		});
-		$('.all-service').removeClass('display-none');
-		$('.menu-setting').removeClass('display-none');
-		$('.ok').addClass('display-none');
-		$('.init').addClass('display-none');
-		$('.cancel').addClass('display-none');
+		subdetailmenu(0);
+		// $('.all-service').removeClass('display-none');
+		// $('.menu-setting').removeClass('display-none');
+		// $('.ok').addClass('display-none');
+		// $('.init').addClass('display-none');
+		// $('.cancel').addClass('display-none');
+	}
+	function subdetailmenu(toggle){
+		if(toggle == 0){
+			$('.all-service').removeClass('display-none');
+			$('.menu-setting').removeClass('display-none');
+			$('.ok').addClass('display-none');
+			$('.init').addClass('display-none');
+			$('.cancel').addClass('display-none');
+		} else {
+			$('.all-service').addClass('display-none');
+			$('.menu-setting').addClass('display-none');
+			$('.ok').removeClass('display-none');
+			$('.init').removeClass('display-none');
+			$('.cancel').removeClass('display-none');
+		}
 	}
 	function initcheck(){
 		$('.sub-menu-div label').each(function(){

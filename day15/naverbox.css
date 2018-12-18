@@ -258,7 +258,7 @@ ul,ol{
     width: 1100px;
     margin: 0 auto;
     padding: 8px 10px 0; /* 순서 : 상 우 하 좌*/
-    /* padding: 8px 10px 0 10px; */
+		/* padding: 8px 10px 0 10px; */
 }
 .bottom-wrap{
     font-size: 0;
@@ -817,10 +817,11 @@ position: absolute;
 }
 .sub-menu-background{
 	position: absolute;
+	width: 100%;
 	top: 0;
 	bottom: 0;
 	left: 0;
-	background-color: #000;
+	background-color: #888;
 	opacity: 0.3;
 	z-index: 3; /* sun-menu의 z-index보다 낮게 */
 	display: none;

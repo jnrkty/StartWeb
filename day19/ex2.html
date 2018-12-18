@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<link rel="stylesheet" href="ex2.css">
+	<title>Document</title>
+</head>
+<body>
+	<div class="box1">
+		<div class="text">text</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+
+		/*
+			hover(함수1, 함수2) : 함수1은 들어올 때 호출, 함수2는 나갈 때 호출
+			hover(함수) : 들어올 때와 나갈 때 함수를 각각 호출
+			*/
+
+			// $('.box1').hover(function(){
+			// 	$('.text').toggleClass('display-block');
+			// }) //방법1
+
+
+			$('.box1').hover(function(){
+				$(this).text('text');
+			},function(){
+				$(this).text('');
+			}); //방법2
+		})
+	
+	</script>
+</body>
+</html>

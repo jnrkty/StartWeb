@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>Document</title>
+</head>
+<style>
+	.box1{
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+		float: left;
+		margin-left: 10px;
+	}
+	.back-color{
+		background-color: bisque;
+	}
+</style>
+<body>
+	<div class="box1">1</div>
+	<div class="box1">2</div>
+	<div class="box1">3</div>
+	<div class="box1">4</div>
+	<div class="box1">5</div>
+	<div class="box1">6</div>
+
+	<script>
+		$(document).ready(function(){
+
+		// 	$('.box1').click(function(){
+		// 		var cnt = $('.back-color').length; //back-color 클래스를 가진 객체의 갯수
+		// 		var maxcnt = 3; //선택된 갯수가 최대 갯수가 아니면 토글을 하고
+		// 		if(cnt < maxcnt){
+		// 		$(this).toggleClass('back-color');
+		// 	} else {
+		// 		if($(this).prop('class').indexOf('back-color') == -1) //클릭한 객체의 class에 back-color클래스가 없으면
+		// 			alert('최대 3개까지 선택할 수 있습니다')
+		// 		$(this).removeClass('back-color'); //최대 갯수이면 리무브
+		// 	}
+		// }) //배열안쓰고 하기
+
+		
+			var arr = []; //처음엔 빈 배열
+			$('.box1').click(function(){
+				var maxcnt = 3;
+				var value = $(this).text();
+				if(arr.indexOf(value) == -1){ //선택 되어있지 않은 박스를 선택했을 때 배열에 저장. 처음엔 배열이 비었으니까~ 뭐를 누르든 없을거임(-1이 없다는 뜻. 그니까 누른게 배열에 저장되어있지 않다)
+					if(arr.length < maxcnt){ //최대 갯수를 넘어가지 않았을 때 
+						arr.push(value); //해당 값을 배열에 최종 추가
+						$(this).addClass('back-color'); 
+					} else{
+						alert('최대 3개까지 선택할 수 있습니다')
+					}
+				}
+				else{ 
+					arr.splice(arr.indexOf(value),1);
+					console.log(arr);
+					$(this).removeClass('back-color');
+				} //선택된 박스를 다시 선택했을 때
+			}) // 배열 써서 하기
+		})
+	</script>
+</body>
+</html>

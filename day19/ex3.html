@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<link rel="stylesheet" href="ex3.css">
+	<title>Document</title>
+</head>
+<body>
+
+		<button class="button">눌러!</button>
+		<div class="modal-background"></div>
+			<div class="modal">
+				<div class="modal-header">
+					<i class="fas fa-times modal-close"></i>
+				</div>
+				<div class="modal-main">
+					<form action="" method="post">
+						<div class="row">
+							<div>					
+									<div>
+										<input type="text" name="id" id="id">
+									</div>
+									<div>
+										<input type="password" name="pw" id="pw">
+									</div>
+							</div>
+							<div>
+								<button class="login">로그인</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+	
+
+	<script>
+		$(document).ready(function(){
+			$('.button').click(function(){
+				$('.modal-background').css('display','block');
+				$('.modal').css('display','block');
+			})
+			$('.modal-close').click(function(){
+				$('.modal-background').css('display','none');
+				$('.modal').css('display','none');
+			})
+		})
+	</script>
+</body>
+</html>
