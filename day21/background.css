@@ -1,0 +1,46 @@
+@charset 'utf-8';
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: black;
+}
+.bg{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: black;
+	background-size: cover;
+	opacity: 0.8;
+	animation-name: ani;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+.animation{
+	font-size: 40px;
+	animation-name: ani2;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes ani{
+	0%{background-image: url(./KakaoTalk_20190101_022841120.jpg);}
+	25%{background-image: url(./KakaoTalk_20190102_094818561.jpg);}
+	50%{background-image: url(./KakaoTalk_20190102_100140775.jpg);}
+	75%{background-image: url(./KakaoTalk_20190102_100155030.jpg);}
+	100%{background-image: url(./KakaoTalk_20190101_022841120.jpg);}
+}
+@keyframes ani2{
+	0%{color: black;}
+	25%{color: red;}
+	50%{color: blue;}
+	75%{color: green;}
+	100%{color: black;}
+}

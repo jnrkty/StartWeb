@@ -1,0 +1,41 @@
+@charset 'utf-8';
+.fade-in{
+	margin: 100px;
+	margin-bottom: 0;
+	opacity: 0;
+	animation-name: open;
+	animation-duration: 2s;
+	animation-iteration-count: none;
+	animation-timing-function: ease-in;
+	animation-fill-mode: forwards;
+	font-size: 40px;
+	height: 200px;
+	overflow: auto;
+}
+.fade-in::-webkit-scrollbar{ 
+	display: none; 
+}
+.ham-menu{
+	float: right;
+	cursor: pointer;
+	font-size: 35px;
+}
+nav::after{
+	content: '';
+	clear: both;
+	display: block;
+}
+.sidebar{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: -200px;
+	width: 200px;
+	background-color: aqua;
+	border: 1px solid black;
+	box-sizing: border-box;
+}
+.sidebar-close{
+	font-size: 35px;
+	float: left;
+}
