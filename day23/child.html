@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>Document</title>
+</head>
+<body>
+  자식창 <br>
+	<input type="text" id="divdata" readonly><br>
+	<input type="text" id="inputdata">
+	<button id="btnok" onclick="senddata()">확인</button>
+	<script>
+		function senddata(){
+			opener.document.getElementById('input').value //opener = 팝업창에서 다른 창으로 값 넘기기
+				= document.getElementById('inputdata').value;
+			window.close();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="data1" name="data1">
+	<button name="data1">자식창 열기</button><br>
+	<input type="text" id="data2" name="data2">
+	<button name="data2">자식창 열기2</button><br>
+	<input type="text" id="getId">
+	<script>
+
+		$('button').click(function(){
+			$('#getId').val($(this).prop('name')); //속성값 'name'을 가져와서 getId에 넣음
+			window.open('child2.html','child','width=400, height=500');
+		})
+	</script>
+    
+</body>
+</html>

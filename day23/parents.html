@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>부모 윈도우</title>
+</head>
+<body>
+	<button id="btnchild">자식창 열기</button>
+	<input type="text" id="input">
+	<button id="btndata">데이터 전달</button><br>
+	<input type="text" id="inputwidth"> <input type="text" id="inputheight"> <br>
+  <script>
+		var childwin;
+		$('#btnchild').click(function(){
+			var w = $('#inputwidth').val();
+			var h = $('#inputheight').val();
+			var minW = 400;
+			var minH = 400;
+			var maxW = 1000;
+			var maxH = 1000;
+			if(w == "" || parseInt(w) < minW)
+				w = minW;
+			else if(parseInt(h) < maxW)
+				w = maxW;
+			if(h == "" || parseInt(h) < minH)
+				h = minH;
+			else if(parseInt(h) < maxH)
+				h = maxH;
+			childwin = window.open('child.html','child','width='+w+', height='+h); //url, 이름, 옵션
+		})
+		$('#btndata').click(function(){
+			childwin.document.getElementById('divdata').value 
+				= document.getElementById('input').value;
+		})
+	</script>
+</body>
+</html>
