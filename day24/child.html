@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>자식 윈도우</title>
+</head>
+<body>
+	<select name="country" id="country">
+		<option value="중국">중국</option>
+		<option value="한국">한국</option>
+		<option value="일본">일본</option>
+	</select>
+	<button id="ok" onclick="SendData()">확인</button>
+		<script>
+			function SendData(){
+				opener.document.getElementById('input').value
+					= document.getElementById('country').value;
+			}
+		
+		</script>
+</body>
+</html>

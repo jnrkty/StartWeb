@@ -2,8 +2,13 @@ $(document).ready(function(){
 	var pointCnt = 0;
 	var op = "+"; //눌린 연산자를 저장하는 변수. +로 기본
 	var isPushOp = false; //연산자가 눌린적이 있는지 없는지 확인하는 변수
-	var input = $('input');
+	var input = $('#dataNum');
 	var num1 = 0;
+	/* 임시문자열이 필요한 이유 : =을 제외한 연산자를 연달아 누르면 마지막에 누른 연산자가 출력돼야함.
+	연산자를 누른 후 다음 수자가 눌리기 전까지의 문자열을 임시 문자열에 저장하고 이후 숫자를 누르면 해당 문자열을 최종 문자열에 저장 */
+	var Str=""; //최종 문자열
+	var StrTmp=""; //임시 문자열
+	
 
   $('.num').click(function(){
 		var val = $(this).text();
@@ -22,23 +27,32 @@ $(document).ready(function(){
 		if(input.val() == "0")
 			input.val(val);
 		else
-			$('input').val(input.val() + val);
+			input.val(input.val() + val);
+		Str = StrTmp;
 	})
 
 	$('.op').click(function(){
+		pointCnt = 0;
 		var tmp = parseFloat(input.val()); //parseFloat : 문자열을 실수로 바꾸는 함수
-		if(isPushOp == false || op == '='){ //연산자 누르고 또 연산자를 눌렀을 때. || '=' 일때는 true여도 실행해라.
+		if(isPushOp == false || op == '='){ //연산자 누르고 또 연산자를 눌렀을 때 막기. || '=' 일때는 true여도 실행해라.
 			switch(op){
 				case "+": num1 = num1 + tmp; break;
 				case "X": num1 = num1 * tmp; break;
 				case "-": num1 = num1 - tmp; break;
 				case "=": num1 = tmp; break;
 			}
-			op = $(this).text();
 			input.val(num1);
+			//(1+2) -> 이렇게 다 포함한다는 뜻. 연산자 이후에 찍은 숫자까지 최종문자열에 저장.
+			Str = Str + tmp;
 		}
+		op = $(this).text();
+		StrTmp = Str + op;
+		if(op == "="){
+			Str = "";
+			StrTmp = "";
+		}
+		$('#dataStr').val(StrTmp);
 		isPushOp = true;
-		console.log(num1);
 	})
 })
 
