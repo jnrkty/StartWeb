@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+  <title>Document</title>
+</head>
+<body>
+	<div class="div">
+	</div>
+		<button id="OK" >확인</button>
+	<script>
+		$('#add').click(function(){
+			var input = '<input type="text" id="inputC"><br>';
+		$('.div').append(input);
+		})
+		var oriData = $(opener.document).find('#input').val();
+		//split : 문자열에서 ,를 기준으로 문자열을 잘라 배열로 만드는 함수
+		var arrData = oriData.split(',');
+		arrData = arrData.reverse(); //거꾸로
+		var str="";
+		for(var i=0; i<arrData.length; i++){
+			str += '<input type="text" value="'+arrData[i]+'"readonly>'
+		}
+		$('.div').html(str);
+
+	</script>
+</body>
+</html>

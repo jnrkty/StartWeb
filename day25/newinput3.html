@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>Document</title>
+</head>
+<body>
+
+	<!-- 자식창에 거꾸로 출력하기 -->
+
+	<input type="text" id="input">
+	<button class="btn">조회</button>
+	<button class="opposite">확인</button>
+	
+	<script>
+		var childwin;
+		$('.btn').click(function(){
+			childwin = window.open('newinput3-child.html','child','width=300, height=400');
+		})
+		// $('.opposite').click(function(){
+		// 	var split = document.getElementById('input2').value.split(',');
+		// 	console.log(split);
+			
+		// 	childwin.document.$('#inputC').prop(split);
+		// })
+
+	</script>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<div id="div">
+		<input type="text" class="input"><br>
+	</div>
+	<button id="btn">추가</button>
+
+	<script>
+
+		$('#btn').click(function(){
+			// 첫번째 방법
+			// $('#div').append('<input type="text"><br>');
+
+			// 두번째 방법
+			var str = '<input type="text" class="input"><br>'
+			var str2 = '<br><input type="text" class="input">'
+			$('.input').last().after(str2);
+			$('.input').last().focus();
+		})
+			
+	</script>
+
+
+
+</body>
+</html>
